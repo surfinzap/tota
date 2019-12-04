@@ -26,8 +26,6 @@
 	@import '~/assets/scss/main.scss';
 
 	.project-list {
-		background-color: $gray--30;
-
 		display: grid;
 		grid-template-columns: 100%;
 		grid-gap: $grid-gap-row $grid-gap-column;
