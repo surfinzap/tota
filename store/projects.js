@@ -32,7 +32,6 @@ export const actions = {
 							title: item.title.value,
 							short_description: item.short_description.value,
 							content: item.content.value,
-							// image: item.image.value[0].url,
 							image: new ImageUrlBuilder(item.image.value[0].url)
 								.withQuality(80)
 								.withWidth(768)
@@ -40,7 +39,6 @@ export const actions = {
 								.getUrl(),
 							image_description: item.image.value[0].description,
 							meta__canonical_url: item.meta__canonical_url.value,
-							url_label: item.url_label.value,
 							color: item.color.value
 						})))
 					})
