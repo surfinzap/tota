@@ -14,7 +14,7 @@
 	@import '~/assets/scss/main.scss';
 
 	.tagline-block {
-		padding-top: ($grid-unit * 18);
+		padding-top: ($grid-unit * 20);
 		padding-bottom: ($grid-unit * 10);
 		justify-self: center;
 
@@ -22,6 +22,7 @@
 			grid-column: 2 / span 12;
 		}
 		@media (min-width: $screen-md-min) {
+			padding-top: ($grid-unit * 18);
 			grid-column: 3 / span 10;
 		}
 		@media (min-width: $screen-lg-min) {
@@ -30,10 +31,14 @@
 	}
 
 	.tagline {
-		@extend .h1;
+		@extend .h2;
 		text-align: center;
 		color: $red;
 		font-weight: 500;
+
+		@media (min-width: $screen-md-min) {
+			font-size: $font-size--900;
+		}
 
 		& > strong {
 			font-weight: 900;
