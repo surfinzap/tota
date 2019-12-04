@@ -21,5 +21,10 @@ $ npm run generate
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
-# install css and preprocessors
+
+## Generate sire preview
+[http://new.tota.sk](http://new.tota.sk)
+
+
+## Temp notes for Brano (irrelevant for others)
 npm install --save-dev pug@2.0.4 pug-plain-loader node-sass sass-loader
