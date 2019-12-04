@@ -1,9 +1,7 @@
 <template lang="pug">
 	div
-		header-tota
 		tagline
-		.container
-			projects-list
+		projects-list
 </template>
 
 
@@ -15,7 +13,6 @@ import ProjectsList from '~/components/projects-list.vue'
 
 export default {
   components: {
-		HeaderTota,
     Tagline,
 		BtnPrimary,
 		ProjectsList
@@ -26,7 +23,7 @@ export default {
 	},
 
 	head: {
-		title: 'Homepage'
+		title: 'tota agentura'
 	},
 	loading: false,
 }
