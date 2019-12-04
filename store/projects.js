@@ -22,15 +22,18 @@ export const actions = {
 					.queryConfig({
 						usePreviewMode: true
 					})
-					.orderParameter('elements.id', SortOrder.asc)
+					.orderParameter('elements.title', SortOrder.desc)
 					.toPromise()
 					.then(response => {
 						state.commit('setProjects', response.items.map(item => ({
-							id: item.id.value,
 							title: item.title.value,
 							short_description: item.short_description.value,
 							content: item.content.value,
-							meta__canonical_url: item.meta__canonical_url.value
+							image: item.image.value[0].url,
+							image_description: item.image.value[0].description,
+							meta__canonical_url: item.meta__canonical_url.value,
+							url_label: item.url_label.value,
+							color: item.color.value
 						})))
 					})
 					.catch(err => console.log('error:' + err));

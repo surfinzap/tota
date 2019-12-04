@@ -1,13 +1,12 @@
 <template lang="pug">
 	div
-		h1
-			| List of fancy projects
 		ul.projects
 			li(v-for='project in projects' v-bind:key='project.meta__canonical_url')
-				nuxt-link(:to='"projekt/" + project.meta__canonical_url')
-					| {{ project.title }}
-				p
-					| {{ project.short_description }}
+				img(:src='project.image' :alt='project.image_description')
+				p {{ project.title }}
+				p {{ project.short_description }}
+				p {{ project.color }}
+				nuxt-link(:to='"projekt/" + project.meta__canonical_url') {{ project.url_label }}
 </template>
 
 
