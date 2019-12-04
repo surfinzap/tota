@@ -22,7 +22,7 @@ $ npm run generate
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
 
-## Generate sire preview
+## Generated site (daily preview)
 [http://new.tota.sk](http://new.tota.sk)
 
 
