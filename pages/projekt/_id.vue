@@ -1,5 +1,5 @@
 <template lang="pug">
-	div
+	div.padding-temp
 		h1.title
 			| {{ project.title }}
 		p(v-html='project.content')
@@ -8,27 +8,35 @@
 </template>
 
 <script>
-export default {
-	async fetch ({store, params, route}) {
-		await store.dispatch({
-			type: 'projects/getProject',
-			canonical: route.params.id
-		})
-	},
+	export default {
+		async fetch ({store, params, route}) {
+			await store.dispatch({
+				type: 'projects/getProject',
+				canonical: route.params.id
+			})
+		},
 
-	computed: {
-		canonicalUrl () {
-			return this.$route.params.id
+		computed: {
+			canonicalUrl () {
+				return this.$route.params.id
+			},
+			project () {
+				return this.$store.state.projects.project;
+			},
 		},
-		project () {
-			return this.$store.state.projects.project;
+		head () {
+			return {
+				title: this.$store.state.projects.project.title + ' — tota agetura'
+			}
 		},
-	},
-	head () {
-		return {
-			title: this.$store.state.projects.project.title + ' — tota agetura'
-		}
-	},
-	loading: false,
-}
+		loading: false,
+	}
 </script>
+
+<style lang='scss'>
+	@import '~/assets/scss/main.scss';
+
+	.padding-temp {
+		padding-top: 100px;
+	}
+</style>
