@@ -1,6 +1,14 @@
+$font-size--500: 18px;
+$font-size--600: 22px;
+$font-size--700: 26px;
+$font-size--800: 32px;
+$font-size--900: 40px;
+
+$line-height-500: 1.25em;
+
 html {
 	font-family: 'Alegreya', serif;;
-	font-size: 18px;
+	font-size: $font-size--500;
 	color: $gray--80;
 	word-spacing: 1px;
 	-ms-text-size-adjust: 100%;
@@ -16,4 +24,9 @@ html {
 *:after {
 	box-sizing: border-box;
 	margin: 0;
+}
+
+.h1 {
+	font-size: $font-size--900;
+	line-height: $line-height-500;
 }

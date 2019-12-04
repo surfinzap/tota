@@ -1,0 +1,92 @@
+//
+// Grid system
+// --------------------------------------------------
+
+// Grid
+$grid-unit: 								4px;
+$grid-gutter:       			  ($grid-unit * 8);
+$grid-columns:							14;
+
+$screen-sm-min:             768px;
+$screen-md-min:             944px;
+$screen-lg-min:             1104px + $grid-gutter;
+
+$container-sm:              (($screen-sm-min - $grid-gutter));
+$container-md:              (($screen-md-min - $grid-gutter));
+$container-lg:              (($screen-lg-min - $grid-gutter));
+
+$grid-gap-column:						($grid-unit * 4);
+$grid-gap-row:							($grid-unit * 8);
+
+$grid-column-sm:						($container-sm - ($grid-gap-column * ($grid-columns - 1))) / $grid-columns;
+$grid-column-md:						($container-md - ($grid-gap-column * ($grid-columns - 1))) / $grid-columns;
+$grid-column-lg:						($container-lg - ($grid-gap-column * ($grid-columns - 1))) / $grid-columns;
+
+// Clearfix
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+
+%clearfix {
+	&:before,
+	&:after {
+		content: " "; // 1
+		display: table; // 2
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+// Container
+
+.container {
+	margin-right: auto;
+	margin-left: auto;
+
+	@extend %clearfix;
+
+	@media (min-width: $screen-sm-min) {
+		width: $container-sm;
+	}
+	@media (min-width: $screen-md-min) {
+		width: $container-md;
+	}
+	@media (min-width: $screen-lg-min) {
+		width: $container-lg;
+	}
+}
+
+
+// Grid wrapper
+//
+// visual guide → http://grid.malven.co/
+.grid {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-gap: $grid-gap-row $grid-gap-column;
+	grid-auto-flow: row;
+	justify-items: stretch;
+	align-items: start;
+
+
+	@media (min-width: $screen-sm-min) {
+		grid-template-columns: repeat($grid-columns, $grid-column-sm);
+	}
+
+	@media (min-width: $screen-md-min) {
+		grid-template-columns: repeat($grid-columns, $grid-column-md);
+	}
+
+	@media (min-width: $screen-lg-min) {
+		grid-template-columns: repeat($grid-columns, $grid-column-lg);
+	}
+}

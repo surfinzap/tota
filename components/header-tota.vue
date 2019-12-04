@@ -19,7 +19,8 @@ export default {
 	@import '~/assets/scss/main.scss';
 
 	header {
-		height: ($grid-unit * 15);
+		background-color: $white;
+		height: ($grid-unit * 20);
 		display: flex;
 		justify-content: center;
 		align-items: center;
