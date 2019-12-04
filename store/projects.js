@@ -58,7 +58,6 @@ export const actions = {
 					.toPromise()
 					.then(response => {
 						state.commit('setProject', ({
-							id: response.items[0].id.value,
 							title: response.items[0].title.value,
 							short_description: response.items[0].short_description.value,
 							content: response.items[0].content.value,
