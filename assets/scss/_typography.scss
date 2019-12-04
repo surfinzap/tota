@@ -1,5 +1,6 @@
-$font-size--500: 18px;
-$font-size--600: 22px;
+$font-size--400: 18px;
+$font-size--500: 22px;
+$font-size--600: 24px;
 $font-size--700: 26px;
 $font-size--800: 32px;
 $font-size--900: 40px;
@@ -8,7 +9,7 @@ $line-height-500: 1.25em;
 
 html {
 	font-family: 'Alegreya', serif;;
-	font-size: $font-size--500;
+	font-size: $font-size--400;
 	color: $gray--80;
 	word-spacing: 1px;
 	-ms-text-size-adjust: 100%;
@@ -28,5 +29,20 @@ html {
 
 .h1 {
 	font-size: $font-size--900;
+	line-height: $line-height-500;
+}
+
+.h2 {
+	font-size: $font-size--800;
+	line-height: $line-height-500;
+}
+
+.h3 {
+	font-size: $font-size--700;
+	line-height: $line-height-500;
+}
+
+.h4 {
+	font-size: $font-size--600;
 	line-height: $line-height-500;
 }
