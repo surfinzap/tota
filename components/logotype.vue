@@ -30,6 +30,7 @@
 
 		&--footer {
 			fill: $gray--60;
+			width: ($grid-unit * 9);
 		}
 	}
 </style>

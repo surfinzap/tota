@@ -2,15 +2,18 @@
 	div
 		header-tota
 		nuxt
+		footer-tota
 </template>
 
 
 <script>
 import HeaderTota from '~/components/header-tota.vue'
+import FooterTota from '~/components/footer-tota.vue'
 
 export default {
 	components: {
 		HeaderTota,
+		FooterTota,
 	},
 	head: {
 		link: [
