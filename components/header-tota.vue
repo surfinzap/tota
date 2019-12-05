@@ -1,6 +1,7 @@
 <template lang="pug">
 	header
-		logotype.logotype--header
+		nuxt-link(to='/')
+			logotype.logotype--header
 </template>
 
 
