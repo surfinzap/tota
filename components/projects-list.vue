@@ -40,12 +40,6 @@
 		}
 	}
 
-	/* .project-tile {
-		a {
-
-		}
-	} */
-
 	.project-link {
 		text-decoration: none;
 		color: $white;
