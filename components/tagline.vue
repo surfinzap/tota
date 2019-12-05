@@ -16,6 +16,8 @@
 	.tagline-block {
 		padding-top: ($grid-unit * 20);
 		padding-bottom: ($grid-unit * 10);
+		padding-left: $grid-gap-column;
+		padding-right: $grid-gap-column;
 		justify-self: center;
 
 		@media (min-width: $screen-sm-min) {
