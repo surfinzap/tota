@@ -21,14 +21,13 @@ export const actions = {
 	async getProjects (state) {
 		await this.$deliveryClient
 					.items()
-					.type('project')
+					.equalsFilter('system.codename', 'project_list')
 					.queryConfig({
 						usePreviewMode: true
 					})
-					.orderParameter('elements.title', SortOrder.desc)
 					.toPromise()
 					.then(response => {
-						state.commit('setProjects', response.items.map(item => ({
+						state.commit('setProjects', response.items[0].project_list.value.map(item => ({
 							title: item.title.value,
 							short_description: item.short_description.value,
 							content: item.content.value,
@@ -42,7 +41,7 @@ export const actions = {
 							color: item.color.value
 						})))
 					})
-					.catch(err => console.log('error:' + err));
+					.catch(err => console.log('error: ' + err));
 	},
 
 	async getProject (state, payload) {
