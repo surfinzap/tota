@@ -10,6 +10,7 @@ $line-height-500: 1.25em;
 html {
 	font-family: 'Alegreya', serif;;
 	font-size: $font-size--400;
+	line-height: $line-height-500;
 	color: $gray--80;
 	word-spacing: 1px;
 	-ms-text-size-adjust: 100%;
@@ -44,5 +45,15 @@ html {
 
 .h4 {
 	font-size: $font-size--600;
+	line-height: $line-height-500;
+}
+
+.h5 {
+	font-size: $font-size--500;
+	line-height: $line-height-500;
+}
+
+.h6 {
+	font-size: $font-size--400;
 	line-height: $line-height-500;
 }
