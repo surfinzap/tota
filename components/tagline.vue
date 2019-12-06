@@ -1,12 +1,18 @@
 <template lang="pug">
 	.container
 		.grid
-			.tagline-block
-				h1.tagline
-					| Inšpirovaní odkazom našich predkov, #[strong objavujeme, tvoríme a podporujeme rusínsku kultúru] ďalšej generácie.
-					br
-					| Sme #[strong tota agentura].
+			.tagline-block(v-html='homepage.tagline')
 </template>
+
+<script>
+	export default {
+		computed: {
+			homepage () {
+				return this.$store.state.homepage.homepage;
+			},
+		},
+	}
+</script>
 
 <style lang='scss'>
 	.tagline-block {
@@ -28,20 +34,21 @@
 		}
 	}
 
-	.tagline {
-		@extend .h2;
-		text-align: center;
-		color: $red;
-		font-weight: 500;
+	.tagline-block {
+		& > h1 {
+			@extend .h2;
+			text-align: center;
+			color: $red;
+			font-weight: 500;
 
-		@media (min-width: $screen-md-min) {
-			font-size: $font-size--900;
+			@media (min-width: $screen-md-min) {
+				font-size: $font-size--900;
+			}
+
+			& > strong {
+				font-weight: 900;
+				font-style: italic;
+			}
 		}
-
-		& > strong {
-			font-weight: 900;
-			font-style: italic;
-		}
-
 	}
 </style>

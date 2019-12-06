@@ -13,7 +13,8 @@
 			await store.dispatch({
 				type: 'projects/getProject',
 				canonical: route.params.id
-			})
+			});
+			await store.dispatch('homepage/getHomepage');
 		},
 
 		computed: {
@@ -26,7 +27,7 @@
 		},
 		head () {
 			return {
-				title: this.$store.state.projects.project.title + ' — tota agetura'
+				title: this.$store.state.projects.project.title + ' — ' + this.$store.state.homepage.homepage.title
 			}
 		},
 	}

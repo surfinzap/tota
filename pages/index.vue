@@ -12,27 +12,36 @@ import BtnPrimary from '~/components/btn-primary.vue'
 import ProjectsList from '~/components/projects-list.vue'
 
 export default {
-  components: {
-    Tagline,
-		BtnPrimary,
+	components: {
+		Tagline,
 		ProjectsList
-  },
+	},
 
 	async fetch ({store, params}) {
+		await store.dispatch('homepage/getHomepage');
 		await store.dispatch('projects/getProjects');
 	},
 
-	head: {
-		title: 'tota agentura',
-		meta: [
-			{ name: 'description', content: 'Objavujeme, tvoríme a podporujeme (nielen) rusínsku kultúru. Najnovšie sme vydali knihu básní v rusínskom jazyku pre deti. Sme tota agentura.' },
-			{ name: 'keywords', content: 'rusínska kultúra, občianske združenie, tota agentura' },
-			{ name: 'og:type', content: 'website' },
-			{ name: 'og:image', content: 'https://tota.sk/assets/img/tota-agentura-logotype-1200-737.png' },
-			{ name: 'og:url', content: 'https://tota.sk/' },
-			{ name: 'og:title', content: 'Sme tota agentura' },
-			{ name: 'og:description', content: 'Inšpirovaní odkazom našich predkov objavujeme, tvoríme a podporujeme (nielen) rusínsku kultúru ďalšej generácie. Vydali sme knihu básní v rusínskom jazyku pre deti, spolupracovali sme na festivale pre tisíce ľudí. Sme tota agentura.' },
-		]
-	},
+	head () {
+		return {
+			title: this.$store.state.homepage.homepage.title,
+			meta: [
+				{ name: 'description', content: this.$store.state.homepage.homepage.meta__description },
+				{ name: 'keywords', content: this.$store.state.homepage.homepage.meta__keywords },
+				// Facebook OpenGraph meta
+				{ name: 'og:type', content: 'website' },
+				{ name: 'og:image', content: this.$store.state.homepage.homepage.meta__image },
+				{ name: 'og:url', content: this.$store.state.homepage.homepage.meta__canonical_url },
+				{ name: 'og:title', content: this.$store.state.homepage.homepage.title },
+				{ name: 'og:description', content: this.$store.state.homepage.homepage.meta__description },
+				// Twitter cards;
+				{ name: 'twitter:card', content: 'summary' },
+				{ name: 'twitter:title', content: this.$store.state.homepage.homepage.title },
+				{ name: 'twitter:description', content: this.$store.state.homepage.homepage.meta__description },
+				{ name: 'twitter:image', content: this.$store.state.homepage.homepage.meta__image },
+				{ name: 'twitter:image:alt', content: this.$store.state.homepage.homepage.meta__image__description }
+			]
+		}
+	}
 }
 </script>
