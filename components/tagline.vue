@@ -8,11 +8,7 @@
 					| Sme #[strong tota agentura].
 </template>
 
-
-
 <style lang='scss'>
-	@import '~/assets/scss/main.scss';
-
 	.tagline-block {
 		padding-top: ($grid-unit * 20);
 		padding-bottom: ($grid-unit * 10);

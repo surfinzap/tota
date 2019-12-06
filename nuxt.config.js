@@ -41,15 +41,9 @@ module.exports = {
 	*/
 	modules: [
 		'kentico-kontent-nuxt-module',
-		'@nuxtjs/sitemap'
+		'@nuxtjs/sitemap',
+		'@nuxtjs/style-resources',
 	],
-	kenticokontent: {
-		projectId: 'bb4c6333-f362-0041-9d56-f18f18e36725',
-		enableAdvancedLogging: true,
-		previewApiKey: 'ew0KICAiYWxnIjogIkhTMjU2IiwNCiAgInR5cCI6ICJKV1QiDQp9.ew0KICAianRpIjogImE4ZDhmZmJmY2U4ZDRhMzY5MTA1ZDU5OWMzODRhZjU0IiwNCiAgImlhdCI6ICIxNTc0ODYzNzc0IiwNCiAgImV4cCI6ICIxOTIwNDYzNzc0IiwNCiAgInByb2plY3RfaWQiOiAiYmI0YzYzMzNmMzYyMDA0MTlkNTZmMThmMThlMzY3MjUiLA0KICAidmVyIjogIjEuMC4wIiwNCiAgImF1ZCI6ICJwcmV2aWV3LmRlbGl2ZXIua2VudGljb2Nsb3VkLmNvbSINCn0.WDySoPcznGD4rldTxwXOAIYBLs7r5uGPfhnT2q7I_SI',
-		enablePreviewMode: false,
-		enableSecuredMode: false
-	},
 	generate: {
 		// temp solution, maybe we'll improve it later
 		routes () {
@@ -60,6 +54,18 @@ module.exports = {
 					})
 				})
 			}
+	},
+	kenticokontent: {
+		projectId: 'bb4c6333-f362-0041-9d56-f18f18e36725',
+		enableAdvancedLogging: true,
+		previewApiKey: 'ew0KICAiYWxnIjogIkhTMjU2IiwNCiAgInR5cCI6ICJKV1QiDQp9.ew0KICAianRpIjogImE4ZDhmZmJmY2U4ZDRhMzY5MTA1ZDU5OWMzODRhZjU0IiwNCiAgImlhdCI6ICIxNTc0ODYzNzc0IiwNCiAgImV4cCI6ICIxOTIwNDYzNzc0IiwNCiAgInByb2plY3RfaWQiOiAiYmI0YzYzMzNmMzYyMDA0MTlkNTZmMThmMThlMzY3MjUiLA0KICAidmVyIjogIjEuMC4wIiwNCiAgImF1ZCI6ICJwcmV2aWV3LmRlbGl2ZXIua2VudGljb2Nsb3VkLmNvbSINCn0.WDySoPcznGD4rldTxwXOAIYBLs7r5uGPfhnT2q7I_SI',
+		enablePreviewMode: false,
+		enableSecuredMode: false
+	},
+	styleResources: {
+		scss: [
+			'assets/scss/main.scss',
+		]
 	},
 	sitemap: {
 		hostname: 'https://tota.sk',

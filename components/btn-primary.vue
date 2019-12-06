@@ -10,8 +10,6 @@
 </script>
 
 <style lang='scss'>
-	@import '~/assets/scss/main.scss';
-
 	.button {
 		&--green {
 		  display: inline-block;

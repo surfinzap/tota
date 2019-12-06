@@ -55,8 +55,6 @@ export default {
 
 
 <style lang='scss'>
-	@import '~/assets/scss/main.scss';
-
 	footer {
 		background-color: $gray--20;
 		margin-top: ($grid-unit * 8);

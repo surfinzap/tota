@@ -23,8 +23,6 @@
 </script>
 
 <style lang='scss'>
-	@import '~/assets/scss/main.scss';
-
 	.project-list {
 		display: grid;
 		grid-template-columns: 100%;

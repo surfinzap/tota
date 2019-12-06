@@ -17,8 +17,6 @@ export default {
 
 
 <style lang='scss'>
-	@import '~/assets/scss/main.scss';
-
 	header {
 		background-color: $white;
 		height: ($grid-unit * 20);
