@@ -58,7 +58,11 @@ export const actions = {
 							title: response.items[0].title.value,
 							short_description: response.items[0].short_description.value,
 							content: response.items[0].content.value,
-							meta__canonical_url: response.items[0].meta__canonical_url.value
+							meta__canonical_url: response.items[0].meta__canonical_url.value,
+							meta__description: response.items[0].meta__description.value,
+							meta__keywords: response.items[0].meta__keywords.value,
+							meta__image: response.items[0].meta__image.value[0].url,
+							meta__image__description: response.items[0].meta__image.value[0].description,
 						}));
 					})
 					.catch(err => console.log('error:' + err));
