@@ -40,6 +40,9 @@ export default {
 				{ name: 'twitter:description', content: this.$store.state.homepage.homepage.meta__description },
 				{ name: 'twitter:image', content: this.$store.state.homepage.homepage.meta__image },
 				{ name: 'twitter:image:alt', content: this.$store.state.homepage.homepage.meta__image__description }
+			],
+			link: [
+				{ rel: 'canonical', href: this.$store.state.homepage.homepage.meta__canonical_url}
 			]
 		}
 	}
