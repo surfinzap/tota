@@ -2,7 +2,7 @@
   "name": "tota",
   "version": "1.0.0",
   "description": "tota.sk web app",
-  "author": "Brano",
+  "author": "Brano Sandala",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
