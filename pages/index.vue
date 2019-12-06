@@ -34,6 +34,5 @@ export default {
 			{ name: 'og:description', content: 'Inšpirovaní odkazom našich predkov objavujeme, tvoríme a podporujeme (nielen) rusínsku kultúru ďalšej generácie. Vydali sme knihu básní v rusínskom jazyku pre deti, spolupracovali sme na festivale pre tisíce ľudí. Sme tota agentura.' },
 		]
 	},
-	loading: false,
 }
 </script>

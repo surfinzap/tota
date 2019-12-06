@@ -17,8 +17,6 @@
 				return this.$store.state.projects.projects;
 			}
 		},
-
-		loading: false,
 	}
 </script>
 

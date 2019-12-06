@@ -29,7 +29,6 @@
 				title: this.$store.state.projects.project.title + ' — tota agetura'
 			}
 		},
-		loading: false,
 	}
 </script>
 
