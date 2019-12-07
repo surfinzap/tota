@@ -2,7 +2,7 @@
 // Grid system
 // --------------------------------------------------
 
-// Grid
+// Grid dimensions
 $grid-unit: 								4px;
 $grid-gutter:       			  ($grid-unit * 8);
 $grid-columns:							14;
@@ -22,6 +22,12 @@ $grid-gap-row:							0;
 $grid-column-sm:						($container-sm - ($grid-gap-column * ($grid-columns - 1))) / $grid-columns;
 $grid-column-md:						($container-md - ($grid-gap-column * ($grid-columns - 1))) / $grid-columns;
 $grid-column-lg:						($container-lg - ($grid-gap-column * ($grid-columns - 1))) / $grid-columns;
+
+
+// Component dimension based on grid and used in various contexts
+$header-height: 						($grid-unit * 20);
+
+
 
 // Clearfix
 //
@@ -48,7 +54,6 @@ $grid-column-lg:						($container-lg - ($grid-gap-column * ($grid-columns - 1)))
 
 
 // Container
-
 .container {
 	margin-right: auto;
 	margin-left: auto;
@@ -70,6 +75,10 @@ $grid-column-lg:						($container-lg - ($grid-gap-column * ($grid-columns - 1)))
 			width: auto;
 			margin: 0 $grid-gap-column;
 		}
+	}
+
+	header + & {
+		padding-top: $header-height;
 	}
 }
 

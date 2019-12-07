@@ -19,12 +19,13 @@ export default {
 <style lang='scss'>
 	header {
 		background-color: $white;
-		height: ($grid-unit * 20);
+		height: $header-height;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		position: fixed;
 		width: 100%;
 		margin-top: 0;
+		z-index: 10;
 	}
 </style>
