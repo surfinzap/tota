@@ -32,6 +32,10 @@
 		@media (min-width: $screen-lg-min) {
 			grid-column: 4 / span 8;
 		}
+
+		@media (min-width: $screen-xl-min) {
+			grid-column: 3 / span 10;
+		}
 	}
 
 	.tagline-block {

@@ -1,5 +1,5 @@
 <template lang="pug">
-	.container
+	.container.container--project-list
 		ul.project-list
 			li.project-tile(v-for='project in projects' v-bind:key='project.meta__canonical_url')
 				a.project-link(v-if='project.external_url' :href='project.meta__canonical_url' target='_blank')
@@ -37,7 +37,12 @@
 
 		@media (min-width: $screen-sm-min) {
 			grid-template-columns: 1fr 1fr;
-			margin-left: 30px;
+		}
+		@media (min-width: $screen-lg-min) {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		@media (min-width: $screen-xl-min) {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
 		}
 	}
 
@@ -49,7 +54,7 @@
 	}
 
 	.project-thumbnail {
-		filter: saturate(0);
+		filter: opacity(30%);
 		width: calc(100% - 32px);
 		height: calc(100% - 32px);
 		margin: $grid-gap-column;
@@ -59,7 +64,7 @@
 
 			@keyframes desaturate {
 				100% {
-					filter: saturate(100%);
+					filter: opacity(100%);
 					width: 100%;
 					height: 100%;
 					margin: 0;
@@ -74,10 +79,12 @@
 		z-index: 1;
 		width: 100%;
 		top: 38%;
+
 	}
 
 	.project-title {
-		@extend .h4;
+		@extend .h3;
+		font-weight: 800;
 		font-style: italic;
 		letter-spacing: 0.025em;
 

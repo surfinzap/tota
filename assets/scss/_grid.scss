@@ -10,6 +10,7 @@ $grid-columns:							14;
 $screen-sm-min:             768px;
 $screen-md-min:             944px;
 $screen-lg-min:             1104px + $grid-gutter;
+$screen-xl-min:             1560px;
 
 $container-sm:              (($screen-sm-min - $grid-gutter));
 $container-md:              (($screen-md-min - $grid-gutter));
@@ -63,6 +64,13 @@ $grid-column-lg:						($container-lg - ($grid-gap-column * ($grid-columns - 1)))
 	@media (min-width: $screen-lg-min) {
 		width: $container-lg;
 	}
+
+	&--project-list {
+		@media (min-width: $screen-xl-min) {
+			width: auto;
+			margin: 0 $grid-gap-column;
+		}
+	}
 }
 
 
@@ -91,4 +99,5 @@ $grid-column-lg:						($container-lg - ($grid-gap-column * ($grid-columns - 1)))
 	@media (min-width: $screen-lg-min) {
 		grid-template-columns: repeat($grid-columns, $grid-column-lg);
 	}
+
 }
