@@ -49,7 +49,11 @@ module.exports = {
 			return axios.get('https://deliver.kontent.ai/bb4c6333-f362-0041-9d56-f18f18e36725/items?system.type=project&elements=meta__canonical_url')
 				.then((response) => {
 					return response.data.items.map((project) => {
-						return '/projekt/' + project.elements.meta__canonical_url.value
+						if (!project.elements.meta__canonical_url.value.includes('http')){
+							return '/projekt/' + project.elements.meta__canonical_url.value;
+						} else {
+							return '';
+						}
 					})
 				})
 			}
