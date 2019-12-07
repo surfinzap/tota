@@ -17,9 +17,9 @@
 						h3.footer__nav-group-title sledujte nás
 						ul
 							li
-								a(href='https://www.facebook.com/totaagentura', target='_blank', rel='nofollow') facebook
+								a(href='https://www.facebook.com/totaagentura' target='_blank' rel='nofollow') facebook
 							li
-								a(href='https://www.youtube.com/user/totaagentura', target='_blank', rel='nofollow') youtube
+								a(href='https://www.youtube.com/user/totaagentura' target='_blank' rel='nofollow') youtube
 					.footer__nav-group
 						h3.footer__nav-group-title impressum
 						ul
