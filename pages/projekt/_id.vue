@@ -53,8 +53,6 @@
 </script>
 
 <style lang='scss'>
-	@import '~/assets/scss/main.scss';
-
 	.padding-temp {
 		padding-top: 100px;
 	}
