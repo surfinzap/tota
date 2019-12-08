@@ -2,16 +2,16 @@
 	.container.container--project-list
 		ul.project-list
 			li.project-tile(v-for='project in projects' v-bind:key='project.meta__canonical_url')
-				a.project-link(v-if='project.external_url' :href='project.meta__canonical_url' target='_blank')
-					.project-credentials(:style='"background-color:" + project.color + ";"')
-						h2.project-title {{ project.title }}
-						p.project-description {{ project.short_description }}
-					img.project-thumbnail(:src='project.image' :alt='project.image_description')
-				nuxt-link.project-link(v-else :to='"projekt/" + project.meta__canonical_url')
-					.project-credentials(:style='"background-color:" + project.color + ";"')
-						h2.project-title {{ project.title }}
-						p.project-description {{ project.short_description }}
-					img.project-thumbnail(:src='project.image' :alt='project.image_description')
+				a.project-tile__link(v-if='project.external_url' :href='project.meta__canonical_url' target='_blank')
+					.project-tile__credentials(:style='"background-color:" + project.color + ";"')
+						h2.project-tile__title {{ project.title }}
+						p.project-tile__description {{ project.short_description }}
+					img.project-tile__thumbnail(:src='project.image' :alt='project.image_description')
+				nuxt-link.project-tile__link(v-else :to='"projekt/" + project.meta__canonical_url')
+					.project-tile__credentials(:style='"background-color:" + project.color + ";"')
+						h2.project-tile__title {{ project.title }}
+						p.project-tile__description {{ project.short_description }}
+					img.project-tile__thumbnail(:src='project.image' :alt='project.image_description')
 </template>
 
 
@@ -46,14 +46,14 @@
 		}
 	}
 
-	.project-link {
+	.project-tile__link {
 		text-decoration: none;
 		color: $white;
 		position: relative;
 		display: block;
 	}
 
-	.project-thumbnail {
+	.project-tile__thumbnail {
 		filter: opacity(30%);
 		width: calc(100% - 32px);
 		height: calc(100% - 32px);
@@ -73,7 +73,7 @@
 		}
 	}
 
-	.project-credentials {
+	.project-tile__credentials {
 		padding: $grid-gap-column;
 		position: absolute;
 		z-index: 1;
@@ -82,7 +82,7 @@
 
 	}
 
-	.project-title {
+	.project-tile__title {
 		@extend .h3;
 		font-weight: 800;
 		font-style: italic;

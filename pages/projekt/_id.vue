@@ -1,10 +1,10 @@
 <template lang="pug">
-	div
-		h1.title
-			| {{ project.title }}
-		div(v-html='project.content')
-		div
-			nuxt-link(class="button--green", to="/") spat na home
+	.project
+		.project__header
+			img.project__header-image(:src='project.image' :alt='project.image_description')
+			h1.project__header-title {{ project.title }}
+			p.project__header-description {{ project.short_description }}
+		.project__content(v-html='project.content')
 </template>
 
 <script>
