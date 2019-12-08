@@ -1,9 +1,12 @@
 <template lang="pug">
 	.project
 		.project__header
-			img.project__header-image(:src='project.image' :alt='project.image_description')
-			h1.project__header-title {{ project.title }}
-			p.project__header-description {{ project.short_description }}
+			.container
+				.grid
+					img.project__header-image(:src='project.image' :alt='project.image_description')
+			.project__header-credentials(:style='"background-color:" + project.color + ";"')
+				h1.project__header-title {{ project.title }}
+				p.project__header-description {{ project.short_description }}
 		.project__content(v-html='project.content')
 </template>
 
@@ -53,7 +56,14 @@
 </script>
 
 <style lang='scss'>
-	.padding-temp {
-		padding-top: 100px;
+	.project__header-image {
+		padding-left: $grid-gap-column;
+		padding-right: $grid-gap-column;
+		justify-self: center;
+
+		@media (min-width: $screen-sm-min) {
+			grid-column: 1 / span 14;
+			padding: 0;
+		}
 	}
 </style>
