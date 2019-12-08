@@ -27,5 +27,8 @@ export default {
 <style lang='scss'>
 	.content-wrapper {
 		padding-top: $header-height;
+		display: grid;
+		grid-template-rows: 1fr auto;
+		min-height: 100vh;
 	}
 </style>
