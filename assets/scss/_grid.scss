@@ -7,6 +7,8 @@ $grid-unit: 								4px;
 $grid-gutter:       			  ($grid-unit * 8);
 $grid-columns:							14;
 
+
+$screen-xs-min:             560px; // rare cases
 $screen-sm-min:             768px;
 $screen-md-min:             944px;
 $screen-lg-min:             1104px + $grid-gutter;

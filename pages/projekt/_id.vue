@@ -2,12 +2,16 @@
 	.project
 		.project__header
 			.container
-				.grid
-					img.project__header-image(:src='project.image' :alt='project.image_description')
-			.project__header-credentials(:style='"background-color:" + project.color + ";"')
-				h1.project__header-title {{ project.title }}
-				p.project__header-description {{ project.short_description }}
-		.project__content(v-html='project.content')
+				img.project__header-image(:src='project.image' :alt='project.image_description')
+			.project__header-color-line(:style='"background-color:" + project.color + ";"')
+				.container
+					.grid
+						.project__header-credentials
+							h1.project__header-title {{ project.title }}
+							p.project__header-description {{ project.short_description }}
+		.container
+			.grid
+				.project__content(v-html='project.content')
 </template>
 
 <script>
@@ -56,6 +60,21 @@
 </script>
 
 <style lang='scss'>
+	.project__header {
+		position: relative;
+		overflow: hidden;
+
+		@media (min-width: $screen-sm-min) {
+			height: $container-sm / 16 * 9;
+		}
+		@media (min-width: $screen-md-min) {
+			height: $container-md / 16 * 9;
+		}
+		@media (min-width: $screen-lg-min) {
+			height: $container-lg / 16 * 9;
+		}
+	}
+
 	.project__header-image {
 		padding-left: $grid-gap-column;
 		padding-right: $grid-gap-column;
@@ -64,6 +83,77 @@
 		@media (min-width: $screen-sm-min) {
 			grid-column: 1 / span 14;
 			padding: 0;
+		}
+	}
+
+	.project__header-color-line {
+		padding: $grid-gap-column * 1;
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		top: 35%;
+
+		@media (min-width: $screen-xs-min) {
+			padding: $grid-gap-column * 2;
+		}
+		@media (min-width: $screen-sm-min) {
+			top: 38%;
+		}
+	}
+
+	.project__header-credentials {
+		@media (min-width: $screen-sm-min) {
+			grid-column: 2 / span 12;
+		}
+		@media (min-width: $screen-md-min) {
+			grid-column: 3 / span 10;
+		}
+	}
+
+	.project__header-title {
+		color: $white;
+		font-size: $font-size--700;
+		letter-spacing: 0.025em;
+
+		@media (min-width: $screen-xs-min) {
+			font-size: $font-size--800;
+		}
+
+		@media (min-width: $screen-sm-min) {
+			font-size: $font-size--900;
+		}
+	}
+
+	.project__header-description {
+		color: $white;
+		font-size: $font-size--500;
+		line-height: $line-height-400;
+
+		@media (min-width: $screen-sm-min) {
+			font-size: $font-size--700;
+		}
+
+		@media (min-width: $screen-sm-min) {
+			font-size: $font-size--800;
+		}
+
+		.project__header-title + &{
+			margin-top: 0;
+		}
+	}
+
+	.project__content {
+		padding: 1em $grid-gap-column * 1;
+
+		@media (min-width: $screen-xs-min) {
+			padding: 1em $grid-gap-column * 2;
+		}
+
+		@media (min-width: $screen-sm-min) {
+			grid-column: 2 / span 12;
+		}
+		@media (min-width: $screen-md-min) {
+			grid-column: 3 / span 10;
 		}
 	}
 </style>
