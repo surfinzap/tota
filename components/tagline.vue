@@ -16,8 +16,8 @@
 
 <style lang='scss'>
 	.tagline-block {
-		padding-top: ($grid-unit * 20);
-		padding-bottom: ($grid-unit * 10);
+		padding-top: 0;
+		padding-bottom: ($grid-unit * 5);
 		padding-left: $grid-gap-column;
 		padding-right: $grid-gap-column;
 		justify-self: center;
@@ -26,7 +26,8 @@
 			grid-column: 2 / span 12;
 		}
 		@media (min-width: $screen-md-min) {
-			padding-top: ($grid-unit * 18);
+			padding-top: ($grid-unit * 5);
+			padding-bottom: ($grid-unit * 8);
 			grid-column: 3 / span 10;
 		}
 		@media (min-width: $screen-lg-min) {

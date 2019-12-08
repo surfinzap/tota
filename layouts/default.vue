@@ -1,8 +1,9 @@
 <template lang="pug">
 	div
 		header-tota
-		nuxt
-		footer-tota
+		.content-wrapper
+			nuxt
+			footer-tota
 </template>
 
 
@@ -24,5 +25,7 @@ export default {
 </script>
 
 <style lang='scss'>
-	@import '~/assets/scss/main.scss';
+	.content-wrapper {
+		padding-top: $header-height;
+	}
 </style>

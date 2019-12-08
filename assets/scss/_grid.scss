@@ -76,10 +76,6 @@ $header-height: 						($grid-unit * 20);
 			margin: 0 $grid-gap-column;
 		}
 	}
-
-	header + & {
-		padding-top: $header-height;
-	}
 }
 
 
