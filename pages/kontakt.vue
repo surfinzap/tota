@@ -93,6 +93,5 @@ export default {
 		@media (min-width: $screen-md-min) {
 			grid-column: 1 / span 6;
 		}
-
 	}
 </style>

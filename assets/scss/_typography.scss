@@ -35,7 +35,8 @@ h1, .h1 {
 	line-height: $line-height-500;
 	color: $gray--80;
 
-	& + p {
+	& + p,
+	& + .article__content {
 		margin-top: 1em;
 	}
 
