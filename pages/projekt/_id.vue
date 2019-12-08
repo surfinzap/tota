@@ -11,7 +11,7 @@
 	export default {
 		async fetch ({store, params, route}) {
 			await store.dispatch({
-				type: 'projects/getProject',
+				type: 'project/getProject',
 				canonical: route.params.id
 			});
 			await store.dispatch('homepage/getHomepage');
@@ -22,30 +22,30 @@
 				return this.$route.params.id
 			},
 			project () {
-				return this.$store.state.projects.project;
+				return this.$store.state.project.project;
 			},
 		},
 		head () {
 			return {
-				title: this.$store.state.projects.project.title + ' — ' + this.$store.state.homepage.homepage.title,
+				title: this.$store.state.project.project.title + ' — ' + this.$store.state.homepage.homepage.title,
 				meta: [
-					{ name: 'description', content: this.$store.state.projects.project.meta__description },
-					{ name: 'keywords', content: this.$store.state.projects.project.meta__keywords },
+					{ name: 'description', content: this.$store.state.project.project.meta__description },
+					{ name: 'keywords', content: this.$store.state.project.project.meta__keywords },
 					// Facebook OpenGraph meta
 					{ name: 'og:type', content: 'website' },
-					{ name: 'og:image', content: this.$store.state.projects.project.meta__image },
-					{ name: 'og:url', content: this.$store.state.homepage.homepage.meta__canonical_url + this.$store.state.projects.project.meta__canonical_url },
-					{ name: 'og:title', content: this.$store.state.projects.project.title },
-					{ name: 'og:description', content: this.$store.state.projects.project.meta__description },
+					{ name: 'og:image', content: this.$store.state.project.project.meta__image },
+					{ name: 'og:url', content: this.$store.state.homepage.homepage.meta__canonical_url + this.$store.state.project.project.meta__canonical_url },
+					{ name: 'og:title', content: this.$store.state.project.project.title },
+					{ name: 'og:description', content: this.$store.state.project.project.meta__description },
 					// Twitter cards;
 					{ name: 'twitter:card', content: 'summary' },
-					{ name: 'twitter:title', content: this.$store.state.projects.project.title },
-					{ name: 'twitter:description', content: this.$store.state.projects.project.meta__description },
-					{ name: 'twitter:image', content: this.$store.state.projects.project.meta__image },
-					{ name: 'twitter:image:alt', content: this.$store.state.projects.project.meta__image__description }
+					{ name: 'twitter:title', content: this.$store.state.project.project.title },
+					{ name: 'twitter:description', content: this.$store.state.project.project.meta__description },
+					{ name: 'twitter:image', content: this.$store.state.project.project.meta__image },
+					{ name: 'twitter:image:alt', content: this.$store.state.project.project.meta__image__description }
 				],
 				link: [
-					{ rel: 'canonical', href: this.$store.state.homepage.homepage.meta__canonical_url + 'projekt/' + this.$store.state.projects.project.meta__canonical_url }
+					{ rel: 'canonical', href: this.$store.state.homepage.homepage.meta__canonical_url + 'projekt/' + this.$store.state.project.project.meta__canonical_url }
 				]
 			}
 		},

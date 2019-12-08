@@ -17,7 +17,7 @@ export default {
 
 	async fetch ({store, params}) {
 		await store.dispatch('homepage/getHomepage');
-		await store.dispatch('projects/getProjects');
+		await store.dispatch('project/getProjects');
 	},
 
 	head () {

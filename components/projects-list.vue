@@ -19,7 +19,7 @@
 	export default {
 		computed: {
 			projects () {
-				return this.$store.state.projects.projects;
+				return this.$store.state.project.projects;
 			}
 		}
 	}
