@@ -1,8 +1,8 @@
 <template lang="pug">
-	div.padding-temp
+	div
 		h1.title
 			| {{ project.title }}
-		p(v-html='project.content')
+		div(v-html='project.content')
 		div
 			nuxt-link(class="button--green", to="/") spat na home
 </template>
@@ -34,7 +34,7 @@
 					// Facebook OpenGraph meta
 					{ name: 'og:type', content: 'website' },
 					{ name: 'og:image', content: this.$store.state.project.project.meta__image },
-					{ name: 'og:url', content: this.$store.state.homepage.homepage.meta__canonical_url + this.$store.state.project.project.meta__canonical_url },
+					{ name: 'og:url', content: this.$store.state.homepage.homepage.meta__canonical_url + 'projekt/' + this.$store.state.project.project.meta__canonical_url },
 					{ name: 'og:title', content: this.$store.state.project.project.title },
 					{ name: 'og:description', content: this.$store.state.project.project.meta__description },
 					// Twitter cards;
