@@ -101,8 +101,20 @@ dl {
 	align-items: start;
 	justify-content: start;
 	align-content: start;
+
+	&.cp--book-info {
+		grid-template-columns: 3fr 8fr;
+
+		@media (min-width: $screen-sm-min) {
+			grid-template-columns: 2fr 8fr;
+		}
+	}
 }
 
 dt {
 	color: $gray--50;
+}
+
+dd {
+	white-space: pre
 }
