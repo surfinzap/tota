@@ -1,17 +1,20 @@
-$font-size--400: 18px;
-$font-size--500: 22px;
-$font-size--600: 24px;
-$font-size--700: 28px;
-$font-size--800: 32px;
-$font-size--900: 42px;
+$font-size--400: 					18px;
+$font-size--500: 					22px;
+$font-size--600: 					24px;
+$font-size--700: 					28px;
+$font-size--800: 					32px;
+$font-size--900: 					42px;
 
-$line-height-400: 1.1em;
-$line-height-500: 1.25em;
+$line-height--400:		 		1.1em;
+$line-height--500: 				1.25em;
+
+$vertical-rhythm--500:		0.75em;
+$vertical-rhythm--600:		1em;
 
 html {
 	font-family: 'Alegreya', serif;;
 	font-size: $font-size--400;
-	line-height: $line-height-500;
+	line-height: $line-height--500;
 	color: $gray--80;
 	word-spacing: 1px;
 	-ms-text-size-adjust: 100%;
@@ -33,63 +36,38 @@ h1, .h1 {
 	font-size: $font-size--900;
 	font-weight: 900;
 	font-style: italic;
-	line-height: $line-height-500;
+	line-height: $line-height--500;
 	color: $gray--80;
-
-	& + p,
-	& + .article__content {
-		margin-top: 1em;
-	}
-
 }
 
 h2, .h2 {
 	font-size: $font-size--800;
-	line-height: $line-height-500;
+	line-height: $line-height--500;
 	font-weight: 500;
 	font-style: normal;
-
-	& + p,
-	& + dl {
-		margin-top: 0.5em;
-	}
-
-	p + &,
-	dl + & {
-		margin-top: 1em;
-	}
 }
 
 .h3 {
 	font-size: $font-size--700;
-	line-height: $line-height-500;
+	line-height: $line-height--500;
 }
 
 .h4 {
 	font-size: $font-size--600;
-	line-height: $line-height-500;
+	line-height: $line-height--500;
 }
 
 .h5 {
 	font-size: $font-size--500;
-	line-height: $line-height-500;
+	line-height: $line-height--500;
 }
 
 .h6 {
 	font-size: $font-size--400;
-	line-height: $line-height-500;
+	line-height: $line-height--500;
 }
 
-p {
-	& + &,
-	dl + & {
-		margin-top: 0.5em;
-	}
 
-	& + figure {
-		margin-top: 1em;
-	}
-}
 
 a {
 	color: $red;
@@ -127,6 +105,31 @@ dd {
 }
 
 
+ul {
+	.project__content &,
+	.kontakt &,
+	.article &, {
+		padding-left: 0;
+	}
+}
+
+li {
+	.project__content &,
+	.kontakt &,
+	.article & {
+		line-height: $line-height--500;
+		list-style-position: outside;
+		list-style-type: none;
+
+		&:before {
+			content: "— ";
+			list-style-position: outside;
+			margin-left: -20px;
+			color: $gray--30;
+		}
+	}
+}
+
 
 blockquote {
 	font-size: $font-size--700;
@@ -135,4 +138,20 @@ blockquote {
 	border-left: ($grid-gap-column / 2) solid $gray--20;
 	padding-left: $grid-gap-column;
 	margin: 1em 0;
+}
+
+
+// vertical rhythm
+//
+.project__content,
+.article,
+.kontakt {
+		p, h1, h2, h3, figure, ul, li, blockquote, dl
+	+ p, h1, h2, h3, figure, ul, li, blockquote, dl {
+			margin-top: $vertical-rhythm--500;
+		}
+
+		h2, h3 {
+			margin-top: $vertical-rhythm--600;
+		}
 }

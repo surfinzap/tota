@@ -127,7 +127,7 @@
 	.project__header-description {
 		color: $white;
 		font-size: $font-size--500;
-		line-height: $line-height-400;
+		line-height: $line-height--400;
 
 		@media (min-width: $screen-sm-min) {
 			font-size: $font-size--700;
