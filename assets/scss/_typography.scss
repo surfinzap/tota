@@ -51,7 +51,7 @@ h2, .h2 {
 
 	& + p,
 	& + dl {
-		margin-top: 0.25em;
+		margin-top: 0.5em;
 	}
 
 	p + &,
@@ -95,18 +95,17 @@ p {
 dl {
 	display: grid;
 	grid-template-columns: 4fr 8fr;
-	grid-gap: 0.25em 0;
+	grid-gap: 0.25em $grid-gap-column;
 	grid-auto-flow: row;
 	justify-items: start;
 	align-items: start;
 	justify-content: start;
 	align-content: start;
 
-	&.cp--book-info {
-		grid-template-columns: 3fr 8fr;
 
+	&.cp--book-info {
 		@media (min-width: $screen-sm-min) {
-			grid-template-columns: 2fr 8fr;
+			grid-template-columns: 3fr 8fr;
 		}
 	}
 }
@@ -116,5 +115,5 @@ dt {
 }
 
 dd {
-	white-space: pre
+	white-space: pre-line;
 }
