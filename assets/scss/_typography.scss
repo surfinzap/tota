@@ -1,7 +1,7 @@
 $font-size--400: 18px;
 $font-size--500: 22px;
 $font-size--600: 24px;
-$font-size--700: 26px;
+$font-size--700: 28px;
 $font-size--800: 32px;
 $font-size--900: 42px;
 
@@ -91,11 +91,19 @@ p {
 	}
 }
 
+a {
+	color: $red;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
 
 dl {
 	display: grid;
 	grid-template-columns: 4fr 8fr;
-	grid-gap: 0.25em $grid-gap-column;
+	grid-gap: 0.5em $grid-gap-column;
 	grid-auto-flow: row;
 	justify-items: start;
 	align-items: start;
@@ -116,4 +124,15 @@ dt {
 
 dd {
 	white-space: pre-line;
+}
+
+
+
+blockquote {
+	font-size: $font-size--700;
+	color: $gray--70;
+	font-style: italic;
+	border-left: ($grid-gap-column / 2) solid $gray--20;
+	padding-left: $grid-gap-column;
+	margin: 1em 0;
 }
