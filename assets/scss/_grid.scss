@@ -18,7 +18,7 @@ $container-sm:              (($screen-sm-min - $grid-gutter));
 $container-md:              (($screen-md-min - $grid-gutter));
 $container-lg:              (($screen-lg-min - $grid-gutter));
 
-$grid-gap-column:						($grid-unit * 4);
+$grid-gap-column:						($grid-gutter / 2);
 $grid-gap-row:							0;
 
 $grid-column-sm:						($container-sm - ($grid-gap-column * ($grid-columns - 1))) / $grid-columns;
@@ -51,6 +51,12 @@ $header-height: 						($grid-unit * 20);
 	}
 	&:after {
 		clear: both;
+	}
+}
+
+body {
+	@media (min-width: $screen-sm-min) {
+		overflow-x: hidden;
 	}
 }
 

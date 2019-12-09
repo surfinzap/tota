@@ -85,6 +85,10 @@ p {
 	dl + & {
 		margin-top: 0.5em;
 	}
+
+	& + figure {
+		margin-top: 1em;
+	}
 }
 
 

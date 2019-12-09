@@ -1,0 +1,54 @@
+$cp--bg-color: 								$gray--10;
+$cp--border-width--xs: 				$grid-gap-column;
+$cp--border-width: 						40vw;
+
+%cp--background {
+	box-sizing: content-box;
+	border-left: $cp--border-width--xs solid $cp--bg-color;
+	margin-left: -$cp--border-width--xs;
+	border-right: $cp--border-width--xs solid $cp--bg-color;
+	margin-right: -$cp--border-width--xs;
+
+	@media (min-width: $screen-sm-min) {
+		border-left: $cp--border-width solid $cp--bg-color;
+		margin-left: -$cp--border-width;
+		border-right: $cp--border-width solid $cp--bg-color;
+		margin-right: -$cp--border-width;
+	}
+
+	border-top: $cp--border-width--xs solid $cp--bg-color;
+	border-bottom: $cp--border-width--xs solid $cp--bg-color;
+}
+
+
+.cp--youtube-video {
+	@extend %cp--background;
+}
+
+
+.cp--youtube-video__media {
+	background: $cp--bg-color;
+	width: 100%;
+	margin-bottom: -8px; /* because there is blank space between objects */
+
+	height: 240px;
+
+	@media (min-width: $screen-sm-min) {
+		height: 320px;
+	}
+
+	@media (min-width: $screen-lg-min) {
+		height: 460px;
+	}
+}
+
+.cp--youtube-video__caption {
+	width: 100%;
+	background: $cp--bg-color;
+	font-weight: 500;
+	font-style: italic;
+	line-height: $line-height-400;
+	color: $gray--60;
+
+	padding-top: 0.5em;
+}
