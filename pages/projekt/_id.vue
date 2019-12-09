@@ -143,13 +143,14 @@
 	}
 
 	.project__content {
-		padding: 1em $grid-gap-column * 1;
+		padding: 0 $grid-gap-column * 1;
 
 		@media (min-width: $screen-xs-min) {
-			padding: 1em $grid-gap-column * 2;
+			padding: 0 $grid-gap-column * 2;
 		}
 
 		@media (min-width: $screen-sm-min) {
+			padding: 0;
 			grid-column: 2 / span 12;
 		}
 		@media (min-width: $screen-md-min) {
