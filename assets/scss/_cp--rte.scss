@@ -1,4 +1,5 @@
 $cp--bg-color: 								$gray--10;
+$cp--caption-color: 					$gray--60;
 $cp--border-width--xs: 				$grid-gap-column;
 $cp--border-width: 						40vw;
 
@@ -26,9 +27,7 @@ $cp--border-width: 						40vw;
 	@extend %cp--background;
 }
 
-
-.cp--youtube-video__media,
-.cp--image__media, {
+.cp--youtube-video__media {
 	background: $cp--bg-color;
 	width: 100%;
 	margin-bottom: -8px; /* because there is blank space between objects */
@@ -44,6 +43,11 @@ $cp--border-width: 						40vw;
 	}
 }
 
+.cp--image__media {
+	background: $cp--bg-color;
+	width: 100%;
+}
+
 .cp--youtube-video__caption,
 .cp--image__caption {
 	width: 100%;
@@ -51,11 +55,7 @@ $cp--border-width: 						40vw;
 	font-weight: 500;
 	font-style: italic;
 	line-height: $line-height--400;
-	color: $gray--60;
+	color: $cp--caption-color;
 
 	padding-top: $vertical-rhythm--400;
-}
-
-.cp--image__caption {
-	padding-top: $vertical-rhythm--600;
 }

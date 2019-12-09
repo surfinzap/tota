@@ -147,8 +147,8 @@ blockquote {
 .project__content,
 .article,
 .kontakt {
-		p, h1, h2, h3, figure, ul, li, blockquote, dl
-	+ p, h1, h2, h3, figure, ul, li, blockquote, dl {
+		p, h1, h2, h3, figure, ul, li, blockquote, dl, .cp--image
+	+ p, h1, h2, h3, figure, ul, li, blockquote, dl, .cp--image {
 			margin-top: $vertical-rhythm--500;
 		}
 
