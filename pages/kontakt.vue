@@ -7,43 +7,43 @@
 				p Ak sa nám niečo podarí, zverejníme to na #[a(href='https://www.facebook.com/totaagentura/') facebooku] alebo #[a(href='https://www.youtube.com/user/totaagentura') youtube] — sledujte nás.
 
 				h2 Členovia
-				dl.row
-					dt.col-xs-3 Riaditeľ
-					dd.col-xs-9 Ing. Ľudmila Šandalová
-					dt.col-xs-3 Dizajnér
-					dd.col-xs-9 Braňo Šandala
+				dl
+					dt Riaditeľ
+					dd Ing. Ľudmila Šandalová
+					dt Dizajnér
+					dd Braňo Šandala
 
 				h2 Identifikačné údaje
-				dl.row
-					dt.col-xs-3 Názov
-					dd.col-xs-9 tota agentura
-					dt.col-xs-3 Právna forma
-					dd.col-xs-9 občianske združenie
-					dt.col-xs-3 Adresa
-					dd.col-xs-9
+				dl
+					dt Názov
+					dd tota agentura
+					dt Právna forma
+					dd občianske združenie
+					dt Adresa
+					dd
 						| Gen. Svobodu 698/21
 						br
 						|  089 01 Svidník
 						br
 						|  Slovenská republika
-					dt.col-xs-3 IČO
-					dd.col-xs-9 42231027
-					dt.col-xs-3 DIČ
-					dd.col-xs-9 2023251912
-					dt.col-xs-3 č. reg.
-					dd.col-xs-9 VVS/1-900/90-37518-1
+					dt IČO
+					dd 42231027
+					dt DIČ
+					dd 2023251912
+					dt č. reg.
+					dd VVS/1-900/90-37518-1
 
 				h2 Fakturačné údaje
-				dl.row
-					dt.col-xs-3 Číslo účtu
-					dd.col-xs-9
+				dl
+					dt Číslo účtu
+					dd
 						| 622892154 / 0900
 						br
 						|  (Slovenská sporiteľňa)
-					dt.col-xs-3 IBAN
-					dd.col-xs-9 SK67 0900 0000 0006 2289 2154
-					dt.col-xs-3 SWIFT
-					dd.col-xs-9 GIBASKBX
+					dt IBAN
+					dd SK67 0900 0000 0006 2289 2154
+					dt SWIFT
+					dd GIBASKBX
 				p Nie sme platcami DPH.
 </template>
 
