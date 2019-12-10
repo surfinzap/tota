@@ -20,8 +20,9 @@ export class TheatrePlayInfo extends ContentItem {
 				+ `<dd class="cp--book-info__data">${theatre_play_info.director.value}</dd>`
 				+ `<dt class="cp--book-info__term">Hudba</dt>`
 				+ `<dd class="cp--book-info__data">${theatre_play_info.music.value}</dd>`
-				+ `<dt class="cp--book-info__term">Autor skladieb</dt>`
-				+ `<dd class="cp--book-info__data">${theatre_play_info.author_of_songs.value}</dd>`
+				+ (theatre_play_info.author_of_songs.value &&
+						(`<dt class="cp--book-info__term">Autor skladieb</dt>`
+					 + `<dd class="cp--book-info__data">${theatre_play_info.author_of_songs.value}</dd>`))
 				+ `<dt class="cp--book-info__term">Choreografia</dt>`
 				+ `<dd class="cp--book-info__data">${theatre_play_info.choreography.value}</dd>`
 				+ `<dt class="cp--book-info__term">Tanečníci</dt>`
