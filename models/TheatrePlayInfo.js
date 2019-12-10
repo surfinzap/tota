@@ -1,11 +1,8 @@
 import { ContentItem } from '@kentico/kontent-delivery';
+var moment = require('moment');
 
-const dateLocale = 'sk-SK';
-const dateOptions = {day: 'numeric',  month: 'long', year: 'numeric' };
-
-/* just a dummy date for debugging purpose to see the result in console*/
-const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
-console.log(event.toLocaleDateString(dateLocale, dateOptions));
+const dateLocale = 'sk';
+const dateFormat = 'LL'; // 10. december 2019
 
 export class TheatrePlayInfo extends ContentItem {
 	constructor() {
@@ -16,7 +13,7 @@ export class TheatrePlayInfo extends ContentItem {
 				+ `<dt class="cp--book-info__term">Názov</dt>`
 				+ `<dd class="cp--book-info__data">${theatre_play_info.title.value}</dd>`
 				+ `<dt class="cp--book-info__term">Premiéra</dt>`
-				+ `<dd class="cp--book-info__data">${theatre_play_info.premiere_date.value.toLocaleDateString(dateLocale, dateOptions)}, ${theatre_play_info.premiere_place.value}</dd>`
+				+ `<dd class="cp--book-info__data">${moment(theatre_play_info.premiere_date.value).locale(dateLocale).format(dateFormat)}, ${theatre_play_info.premiere_place.value}</dd>`
 				+ `<dt class="cp--book-info__term">Scenár</dt>`
 				+ `<dd class="cp--book-info__data">${theatre_play_info.playwright.value}</dd>`
 				+ `<dt class="cp--book-info__term">Režisér</dt>`
