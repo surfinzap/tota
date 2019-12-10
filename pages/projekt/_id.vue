@@ -12,10 +12,19 @@
 		.container
 			.grid
 				.project__content(v-html='project.content')
+			.grid
+				.project__content
+					h3 Internetové obchody
+					pos-list
 </template>
 
 <script>
+	import PosList from '~/components/pos-list.vue'
+
 	export default {
+		components: {
+			PosList
+		},
 		async fetch ({store, params, route}) {
 			await store.dispatch({
 				type: 'project/getProject',
