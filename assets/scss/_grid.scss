@@ -19,7 +19,7 @@ $container-md:              (($screen-md-min - $grid-gutter));
 $container-lg:              (($screen-lg-min - $grid-gutter));
 
 $grid-gap-column:						($grid-gutter / 2);
-$grid-gap-row:							0;
+$grid-gap-row:							($grid-gutter / 2);
 
 $grid-column-sm:						($container-sm - ($grid-gap-column * ($grid-columns - 1))) / $grid-columns;
 $grid-column-md:						($container-md - ($grid-gap-column * ($grid-columns - 1))) / $grid-columns;
