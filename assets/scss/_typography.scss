@@ -95,7 +95,7 @@ dl {
 	align-content: start;
 
 
-	&.cp--book-info {
+	&.cp--dl {
 		@media (min-width: $screen-sm-min) {
 			grid-template-columns: 3fr 8fr;
 		}
