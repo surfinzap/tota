@@ -1,45 +1,44 @@
 $cp--bg-color: 								$gray--10;
 $cp--caption-color: 					$gray--60;
-$cp--border-width--xs: 				$grid-gap-column;
-$cp--border-width: 						40vw;
+$cp--border-width: 						$grid-gap-column;
 
-%cp--background {
-	box-sizing: content-box;
-	border-left: $cp--border-width--xs solid $cp--bg-color;
-	margin-left: -$cp--border-width--xs;
-	border-right: $cp--border-width--xs solid $cp--bg-color;
-	margin-right: -$cp--border-width--xs;
-
-	@media (min-width: $screen-sm-min) {
-		border-left: $cp--border-width solid $cp--bg-color;
-		margin-left: -$cp--border-width;
-		border-right: $cp--border-width solid $cp--bg-color;
-		margin-right: -$cp--border-width;
-	}
-
-	border-top: $cp--border-width--xs solid $cp--bg-color;
-	border-bottom: $cp--border-width--xs solid $cp--bg-color;
-}
-
+$two-grid-columns-w-gap--md:	(51px + $grid-gap-column) * 2;
+$two-grid-columns-w-gap--lg:	(64px + $grid-gap-column) * 2;
 
 .cp--youtube-video,
 .cp--image {
-	@extend %cp--background;
+	width: 100%;
+	box-sizing: content-box;
+	border: $cp--border-width solid $cp--bg-color;
+	margin-right: -$cp--border-width;
+	margin-left: -$cp--border-width;
+
+
+	@media (min-width: $screen-md-min) {
+		width: calc(100% + #{$two-grid-columns-w-gap--md});
+		margin-left: -($cp--border-width + ($two-grid-columns-w-gap--md / 2));
+	}
+	@media (min-width: $screen-lg-min) {
+		width: calc(100% + #{$two-grid-columns-w-gap--lg});
+		margin-left: -($cp--border-width + ($two-grid-columns-w-gap--lg / 2));
+	}
 }
 
 .cp--youtube-video__media {
 	background: $cp--bg-color;
 	width: 100%;
-	margin-bottom: -8px; /* because there is blank space between objects */
+	margin-bottom: -8px; /* because there is blank space between video and captino*/
 
 	height: 240px;
 
 	@media (min-width: $screen-sm-min) {
-		height: 320px;
+		height: 350px;
 	}
-
+	@media (min-width: $screen-md-min) {
+		height: 440px;
+	}
 	@media (min-width: $screen-lg-min) {
-		height: 460px;
+		height: 540px;
 	}
 }
 
@@ -56,6 +55,5 @@ $cp--border-width: 						40vw;
 	font-style: italic;
 	line-height: $line-height--400;
 	color: $cp--caption-color;
-
 	padding-top: $vertical-rhythm--400;
 }
