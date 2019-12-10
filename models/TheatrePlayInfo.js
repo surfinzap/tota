@@ -23,10 +23,12 @@ export class TheatrePlayInfo extends ContentItem {
 				+ (theatre_play_info.author_of_songs.value &&
 						(`<dt class="cp--book-info__term">Autor skladieb</dt>`
 					 + `<dd class="cp--book-info__data">${theatre_play_info.author_of_songs.value}</dd>`))
-				+ `<dt class="cp--book-info__term">Choreografia</dt>`
-				+ `<dd class="cp--book-info__data">${theatre_play_info.choreography.value}</dd>`
-				+ `<dt class="cp--book-info__term">Tanečníci</dt>`
-				+ `<dd class="cp--book-info__data">${theatre_play_info.dancing_group.value}</dd>`
+				+ (theatre_play_info.choreography.value &&
+						(`<dt class="cp--book-info__term">Choreografia</dt>`
+					 + `<dd class="cp--book-info__data">${theatre_play_info.choreography.value}</dd>`))
+				+ (theatre_play_info.dancing_group.value &&
+						(`<dt class="cp--book-info__term">Tanečníci</dt>`
+					 + `<dd class="cp--book-info__data">${theatre_play_info.dancing_group.value}</dd>`))
 				+ `<dt class="cp--book-info__term">Scénografia</dt>`
 				+ `<dd class="cp--book-info__data">${theatre_play_info.scenography.value}</dd>`
 				+ `<dt class="cp--book-info__term">Grafický dizajn</dt>`
