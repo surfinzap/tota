@@ -1,3 +1,6 @@
+$font-family--base: 			'Alegreya', serif;
+
+$font-size--300: 					16px;
 $font-size--400: 					18px;
 $font-size--500: 					22px;
 $font-size--600: 					24px;
@@ -12,11 +15,13 @@ $vertical-rhythm--400:		0.5em;
 $vertical-rhythm--500:		0.75em;
 $vertical-rhythm--600:		1em;
 
+$font-color--base:        $gray--80;
+
 html {
-	font-family: 'Alegreya', serif;;
+	font-family: $font-family--base;
 	font-size: $font-size--400;
 	line-height: $line-height--500;
-	color: $gray--80;
+	color: $font-color--base;
 	word-spacing: 1px;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
