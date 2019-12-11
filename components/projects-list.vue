@@ -50,11 +50,14 @@
 	.project-tile {
 		&:hover {
 			.project-tile__credentials {
-				animation: 350ms ease-out move-down forwards;
 
-				@keyframes move-down {
-					100% {
-						bottom: 0;
+				@media (min-width: $screen-xs-min) {
+					animation: 350ms ease-out move-down forwards;
+
+					@keyframes move-down {
+						100% {
+							bottom: 0;
+						}
 					}
 				}
 			}
@@ -74,8 +77,11 @@
 		position: absolute;
 		z-index: 1;
 		width: 100%;
-		bottom: 37%;
+		bottom: 0;
 
+		@media (min-width: $screen-xs-min) {
+			bottom: 28%;
+		}
 		@media (min-width: $screen-sm-min) {
 			bottom: 28%;
 		}
