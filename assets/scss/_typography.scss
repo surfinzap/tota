@@ -74,6 +74,11 @@ h2, .h2 {
 }
 
 
+p {
+	&:empty {
+		display: none;
+	}
+}
 
 a {
 	color: $red;
