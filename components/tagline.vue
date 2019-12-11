@@ -26,7 +26,7 @@
 			grid-column: 2 / span 12;
 		}
 		@media (min-width: $screen-md-min) {
-			padding-top: ($grid-unit * 5);
+			padding-top: ($grid-unit);
 			padding-bottom: ($grid-unit * 8);
 			grid-column: 3 / span 10;
 		}

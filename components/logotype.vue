@@ -14,7 +14,11 @@
 		&--header {
 			animation: 2s appear;
 			fill: $red;
-			width: ($grid-unit * 11);
+			width: ($grid-unit * 9);
+
+			@media (min-width: $screen-xs-min) {
+				width: ($grid-unit * 11);
+			}
 
 			@keyframes appear {
 				0% {

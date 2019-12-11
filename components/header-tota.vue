@@ -19,13 +19,17 @@ export default {
 <style lang='scss'>
 	header {
 		background-color: $white;
-		height: $header-height;
+		height: $header-height--xs;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		position: fixed;
 		width: 100%;
-		margin-top: 0;
 		z-index: 10;
+		padding-top: 8px;
+
+		@media (min-width: $screen-xs-min) {
+			height: $header-height;
+		}
 	}
 </style>

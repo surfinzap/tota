@@ -27,6 +27,7 @@ $grid-column-lg:						($container-lg - ($grid-gap-column * ($grid-columns - 1)))
 
 
 // Component dimension based on grid and used in various contexts
+$header-height--xs: 						($grid-unit * 16);
 $header-height: 						($grid-unit * 20);
 
 

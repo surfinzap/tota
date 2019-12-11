@@ -26,9 +26,13 @@ export default {
 
 <style lang='scss'>
 	.content-wrapper {
-		padding-top: $header-height;
+		padding-top: $header-height--xs;
 		display: grid;
 		grid-template-rows: 1fr auto;
 		min-height: 100vh;
+
+		@media (min-width: $screen-xs-min) {
+			padding-top: $header-height;
+		}
 	}
 </style>
