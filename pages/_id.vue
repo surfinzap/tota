@@ -8,6 +8,8 @@
 
 <script>
 	export default {
+		scrollToTop: true,
+
 		async fetch ({store, params, route}) {
 			await store.dispatch({
 				type: 'article/getArticle',

@@ -22,6 +22,8 @@
 	import PosList from '~/components/pos-list.vue'
 
 	export default {
+		scrollToTop: true,
+		
 		components: {
 			PosList
 		},
