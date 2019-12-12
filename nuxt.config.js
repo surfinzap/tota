@@ -1,5 +1,6 @@
 const axios = require('axios')
 
+
 module.exports = {
 	loading: false,
 	mode: 'universal',
@@ -51,25 +52,23 @@ module.exports = {
 		'@nuxtjs/style-resources',
 	],
 	generate: {
-		// temp & messy solution, maybe we'll improve it later
-		// get articles & projects → resolve the routes differently
-		// for projects, remove the ones with external routes
 		routes () {
-			return axios.get('https://deliver.kontent.ai/bb4c6333-f362-0041-9d56-f18f18e36725/items?system.type[in]=article,project&elements=meta__canonical_url')
+			let articles = axios.get('https://deliver.kontent.ai/bb4c6333-f362-0041-9d56-f18f18e36725/items?system.type=article&elements=meta__canonical_url')
 				.then((response) => {
 					return response.data.items.map((item) => {
-						if (item.system.type == 'article') {
 							return item.elements.meta__canonical_url.value;
-						} else {
-							if (!item.elements.meta__canonical_url.value.includes('http')){
-								return '/projekt/' + item.elements.meta__canonical_url.value;
-							} else {
-								// TBD rewrite this:
-								// translit sits on subdomain and we're avoiding to generate URL here
-								return '/projekt/45f4df654sd6f54s5';
-							}
-						}
 					})
+				})
+
+			let projects = axios.get('https://deliver.kontent.ai/bb4c6333-f362-0041-9d56-f18f18e36725/items?system.type=project&elements.project_type[any]=book,theatre,cd_album,generic&elements=meta__canonical_url')
+				.then((response) => {
+					return response.data.items.map((item) => {
+							return '/projekt/' + item.elements.meta__canonical_url.value;
+					})
+				})
+
+				return Promise.all([articles, projects]).then(items => {
+					return items.join().split(',');
 				})
 			}
 	},
