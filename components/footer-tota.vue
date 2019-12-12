@@ -69,6 +69,12 @@ export default {
 
 		@media (min-width: $screen-sm-min) {
 			grid-column: 1 / span 1;
+			margin-left: 0;
+		}
+
+		@media (min-width: $screen-md-min) {
+			grid-column: 3 / span 1;
+			margin-left: 0;
 		}
 	}
 
@@ -89,7 +95,12 @@ export default {
 
 		@media (min-width: $screen-sm-min) {
 			grid-template-columns: 3fr 3fr 7fr;
-			grid-column: 2 / span 12;
+			grid-column: 2 / span 10;
+		}
+
+		@media (min-width: $screen-md-min) {
+			grid-template-columns: 3fr 3fr 7fr;
+			grid-column: 4 / span 10;
 		}
 
 		@media (min-width: $screen-md-min) {

@@ -51,7 +51,7 @@
 <script>
 export default {
 	scrollToTop: true,
-	
+
 	async fetch ({store, params}) {
 		await store.dispatch('homepage/getHomepage');
 	},
@@ -93,7 +93,7 @@ export default {
 			grid-column: 1 / span 9;
 		}
 		@media (min-width: $screen-md-min) {
-			grid-column: 1 / span 6;
+			grid-column: 4 / span 6;
 		}
 	}
 </style>

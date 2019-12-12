@@ -63,7 +63,7 @@
 			grid-column: 1 / span 10;
 		}
 		@media (min-width: $screen-md-min) {
-			grid-column: 1 / span 9;
+			grid-column: 4 / span 8;
 		}
 	}
 
