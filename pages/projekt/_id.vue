@@ -15,19 +15,16 @@
 			.grid
 				.project__content
 					h3 Internetové obchody
-					pos-list
 					bi-poem
 </template>
 
 <script>
-	import PosList from '~/components/pos-list.vue'
 	import BiPoem from '~/components/bi-poem.vue'
 
 	export default {
 		scrollToTop: true,
 
 		components: {
-			PosList,
 			BiPoem
 		},
 		async fetch ({store, params, route}) {
