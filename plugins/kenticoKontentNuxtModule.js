@@ -4,6 +4,8 @@ import { BookInfo } from "../models/BookInfo";
 import { TheatrePlayInfo } from "../models/TheatrePlayInfo";
 import { PullQuote } from "../models/PullQuote";
 import { FigureImage } from "../models/FigureImage";
+import { DefinitionList } from "../models/DefinitionList";
+import { DefinitionTerm } from "../models/DefinitionTerm";
 
 export default function({ store, app, $deliveryClient }) {
 	$deliveryClient.config.typeResolvers = [
@@ -12,5 +14,7 @@ export default function({ store, app, $deliveryClient }) {
 		new TypeResolver('theatre_play_info', () => new TheatrePlayInfo()),
 		new TypeResolver('pull_quote', () => new PullQuote()),
 		new TypeResolver('figure_image', () => new FigureImage()),
+		new TypeResolver('definition_list', () => new DefinitionList()),
+		new TypeResolver('definition_term', () => new DefinitionTerm()),
 	];
 }
