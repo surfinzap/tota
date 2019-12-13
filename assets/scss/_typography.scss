@@ -158,8 +158,8 @@ blockquote {
 .project__content,
 .article,
 .kontakt {
-		p, h1, h2, h3, figure, ul, li, blockquote, dl, .cp--image
-	+ p, h1, h2, h3, figure, ul, li, blockquote, dl, .cp--image {
+		p, h1, h2, h3, figure, ul, li, blockquote, dl, .cp--youtube-video, .cp--image, .cp--pos-list
+	+ p, h1, h2, h3, figure, ul, li, blockquote, dl, .cp--youtube-video, .cp--image, .cp--pos-list {
 			margin-top: $vertical-rhythm--500;
 		}
 
