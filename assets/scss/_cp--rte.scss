@@ -107,3 +107,18 @@ $two-grid-columns-w-gap--lg:	(64px + $grid-gap-column) * 2;
 		padding-top: $vertical-rhythm--400;
 	}
 }
+
+.cp--bi-poem {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-gap: 0  $grid-gap-column;
+	grid-auto-flow: row;
+	justify-items: stretch;
+	align-items: start;
+	justify-content: start;
+	align-content: start;
+
+	@media (min-width: $screen-sm-min) {
+		grid-template-columns: 1fr 1fr;
+	}
+}
