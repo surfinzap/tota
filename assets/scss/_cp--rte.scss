@@ -5,6 +5,8 @@ $cp--border-width: 						$grid-gap-column;
 $two-grid-columns-w-gap--md:	(51px + $grid-gap-column) * 2;
 $two-grid-columns-w-gap--lg:	(64px + $grid-gap-column) * 2;
 
+$cp--pos-item--padding:				0 ($grid-unit * 2);
+
 %cp--offset {
 	width: 100%;
 	margin-right: -$cp--border-width;
@@ -82,6 +84,8 @@ $two-grid-columns-w-gap--lg:	(64px + $grid-gap-column) * 2;
 	}
 }
 
+
+
 .cp--pos-item__title {
 	font-size: $font-size--500;
 	font-style: italic;
@@ -95,7 +99,7 @@ $two-grid-columns-w-gap--lg:	(64px + $grid-gap-column) * 2;
 }
 
 .cp--pos-item__description {
-	padding: 0 ($grid-unit * 2);
+	padding: $cp--pos-item--padding;
 	line-height: $line-height--500;
 	color: $gray--50;
 
@@ -105,12 +109,44 @@ $two-grid-columns-w-gap--lg:	(64px + $grid-gap-column) * 2;
 }
 
 .cp--pos-item__action {
-	padding: 0 ($grid-unit * 2);
+	padding: $cp--pos-item--padding;
 
 	.cp--pos-item__description ~ & {
 		padding-top: $vertical-rhythm--400;
 	}
 }
+
+
+.cp--pos-item__subtitle,
+.cp--pos-item__address,
+.cp--pos-item__opening-hours-title,
+.cp--pos-item__opening-hours {
+	padding: $cp--pos-item--padding;
+	line-height: $line-height--500;
+	color: $gray--50;
+}
+
+.cp--pos-item__subtitle {
+	font-weight: 800;
+	color: $gray--70;
+
+	.cp--pos-item__title ~ & {
+		padding-top: $vertical-rhythm--400;
+	}
+}
+
+.cp--pos-item__opening-hours-title {
+	font-weight: 800;
+
+	.cp--pos-item__address ~ & {
+		padding-top: $vertical-rhythm--400;
+	}
+}
+
+
+
+
+
 
 .cp--bi-poem {
 	display: grid;
