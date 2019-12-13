@@ -6,6 +6,9 @@ import { PullQuote } from "../models/PullQuote";
 import { FigureImage } from "../models/FigureImage";
 import { DefinitionList } from "../models/DefinitionList";
 import { DefinitionTerm } from "../models/DefinitionTerm";
+import { PosList } from "../models/PosList";
+import { PosOnline } from "../models/PosOnline";
+import { Pos } from "../models/Pos";
 
 export default function({ store, app, $deliveryClient }) {
 	$deliveryClient.config.typeResolvers = [
@@ -16,5 +19,8 @@ export default function({ store, app, $deliveryClient }) {
 		new TypeResolver('figure_image', () => new FigureImage()),
 		new TypeResolver('definition_list', () => new DefinitionList()),
 		new TypeResolver('definition_term', () => new DefinitionTerm()),
+		new TypeResolver('pos_list', () => new PosList()),
+		new TypeResolver('pos_online', () => new PosOnline()),
+		new TypeResolver('pos', () => new Pos()),
 	];
 }

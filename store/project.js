@@ -53,6 +53,7 @@ export const actions = {
 						usePreviewMode: true
 					})
 					.equalsFilter('elements.meta__canonical_url', payload.canonical)
+					.depthParameter(2)
 					.toPromise()
 					.then(response => {
 						state.commit('setProject', ({
