@@ -66,44 +66,44 @@ $two-grid-columns-w-gap--lg:	(64px + $grid-gap-column) * 2;
 	@extend %cp--offset;
 	display: grid;
 	grid-template-columns: 100%;
-	grid-gap: 0 $grid-gap-column;
+	grid-gap: ($grid-gap-column * 2)  $grid-gap-column;
 	grid-auto-flow: row;
-	justify-items: start;
+	justify-items: stretch;
 	align-items: start;
 	justify-content: start;
 	align-content: start;
 
 	@media (min-width: $screen-sm-min) {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 
-	@media (min-width: $screen-sm-min) {
+	@media (min-width: $screen-md-min) {
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 }
 
-.cp__pos-item__title {
+.cp--pos-item__title {
 	font-size: $font-size--500;
 	font-style: italic;
 	font-weight: 900;
 	border-top: ($grid-unit * 2) solid $gray--20;
 	padding: ($grid-unit) ($grid-unit * 2) 0;
 
-	.cp__pos-item:first-of-type & {
+	.cp--pos-item:first-of-type & {
 		border-top-color: $red;
 	}
 }
 
-.cp__pos-item__description {
+.cp--pos-item__description {
 	padding: 0 ($grid-unit * 2);
 	line-height: $line-height--500;
 	color: $gray--50;
 }
 
-.cp__pos-item__action {
+.cp--pos-item__action {
 	padding: 0 ($grid-unit * 2);
 
-	.cp__pos-item__description + & {
+	.cp--pos-item__description + & {
 		padding-top: $vertical-rhythm--400;
 	}
 }
