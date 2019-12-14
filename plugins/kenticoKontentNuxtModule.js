@@ -9,6 +9,7 @@ import { DefinitionTerm } from "../models/DefinitionTerm";
 import { PosList } from "../models/PosList";
 import { PosOnline } from "../models/PosOnline";
 import { PosOffline } from "../models/PosOffline";
+import { PosCz } from "../models/PosCz";
 import { Pos } from "../models/Pos";
 
 export default function({ store, app, $deliveryClient }) {
@@ -23,6 +24,7 @@ export default function({ store, app, $deliveryClient }) {
 		new TypeResolver('pos_list', () => new PosList()),
 		new TypeResolver('pos_online', () => new PosOnline()),
 		new TypeResolver('pos_offline', () => new PosOffline()),
+		new TypeResolver('pos_cz', () => new PosCz()),
 		new TypeResolver('pos', () => new Pos()),
 	];
 }
