@@ -9,8 +9,7 @@ $cp--pos-item--padding:				0 ($grid-unit * 2);
 
 %cp--offset {
 	width: 100%;
-	margin-right: -$cp--border-width;
-	margin-left: -$cp--border-width;
+
 
 	@media (min-width: $screen-md-min) {
 		width: calc(100% + #{$two-grid-columns-w-gap--md});
@@ -26,6 +25,9 @@ $cp--pos-item--padding:				0 ($grid-unit * 2);
 .cp--image {
 	box-sizing: content-box;
 	border: $cp--border-width solid $cp--bg-color;
+
+	margin-right: -$cp--border-width;
+	margin-left: -$cp--border-width;
 
 	@extend %cp--offset;
 }

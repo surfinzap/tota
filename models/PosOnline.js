@@ -4,7 +4,7 @@ export class PosOnline extends ContentItem {
 	constructor() {
 		super({
 			richTextResolver: pos_online =>
-				`<div class="cp--pos-item`
+				`<div class="cp--pos-item `
 				+ (pos_online.primary_pos.value[0].codename == "yes" &&
 					(` cp--pos-item--primary`)) + `">`
 				+ `${pos_online.pos.value}`
