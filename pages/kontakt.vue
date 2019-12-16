@@ -10,6 +10,8 @@
 				dl
 					dt Riaditeľ
 					dd Ing. Ľudmila Šandalová
+					dt Manažér
+					dd Mgr. Vladimír Šandala
 					dt Dizajnér
 					dd Braňo Šandala
 
