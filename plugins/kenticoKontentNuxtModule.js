@@ -11,6 +11,7 @@ import { PosOnline } from "../models/PosOnline";
 import { PosOffline } from "../models/PosOffline";
 import { PosCz } from "../models/PosCz";
 import { Pos } from "../models/Pos";
+import { BiPoem } from "../models/BiPoem";
 
 export default function({ store, app, $deliveryClient }) {
 	$deliveryClient.config.typeResolvers = [
@@ -26,5 +27,6 @@ export default function({ store, app, $deliveryClient }) {
 		new TypeResolver('pos_offline', () => new PosOffline()),
 		new TypeResolver('pos_cz', () => new PosCz()),
 		new TypeResolver('pos', () => new Pos()),
+		new TypeResolver('bi_poem', () => new BiPoem()),
 	];
 }

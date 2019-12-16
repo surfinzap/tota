@@ -161,10 +161,6 @@ blockquote {
 		p, h1, h2, h3, figure, ul, li, blockquote, dl, .cp--youtube-video, .cp--image, .cp--pos-list, .cp--bi-poem
 	+ p, h1, h2, h3, figure, ul, li, blockquote, dl, .cp--youtube-video, .cp--image, .cp--pos-list, .cp--bi-poem {
 			margin-top: $vertical-rhythm--500;
-
-			&:first-child {
-				margin-top: 0;
-			}
 		}
 
 		h2, h3 {

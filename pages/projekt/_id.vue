@@ -12,21 +12,12 @@
 		.container
 			.grid
 				.project__content(v-html='project.content')
-			.grid
-				.project__content
-					h3 Internetové obchody
-					bi-poem
 </template>
 
 <script>
-	import BiPoem from '~/components/bi-poem.vue'
-
 	export default {
 		scrollToTop: true,
 
-		components: {
-			BiPoem
-		},
 		async fetch ({store, params, route}) {
 			await store.dispatch({
 				type: 'project/getProject',
