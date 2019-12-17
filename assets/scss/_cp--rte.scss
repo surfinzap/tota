@@ -123,8 +123,8 @@ $cp--pos-item--padding:				0 ($grid-unit * 2);
 	padding: $cp--pos-item--padding;
 	line-height: $line-height--500;
 	color: $gray--50;
+	white-space: pre-line;
 }
-
 .cp--pos-item__subtitle {
 	font-weight: 800;
 	color: $gray--70;
