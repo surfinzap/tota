@@ -26,6 +26,7 @@ if (process.client) {
 		content: {
 			message: 'TBD custom cookies to go here.',
 			dismiss: 'ozaj',
+			link: 'Tuna citaj podmienky pouzivania',
 			href: '/podmienky-pouzivania'
 		},
 	});
