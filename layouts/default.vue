@@ -10,6 +10,26 @@
 <script>
 import HeaderTota from '~/components/header-tota.vue'
 import FooterTota from '~/components/footer-tota.vue'
+if (process.client) {
+	require('cookieconsent');
+	window.cookieconsent.initialise({
+		palette: {
+			popup: {
+				background: '#edeff5',
+				text: '#838391'
+			},
+			button: {
+				background: '#4b81e8'
+			},
+		},
+		theme: 'classic',
+		content: {
+			message: 'TBD custom cookies to go here.',
+			dismiss: 'ozaj',
+			href: '/podmienky-pouzivania'
+		},
+	});
+}
 
 export default {
 	components: {
