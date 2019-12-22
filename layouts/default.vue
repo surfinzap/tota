@@ -10,24 +10,30 @@
 <script>
 import HeaderTota from '~/components/header-tota.vue'
 import FooterTota from '~/components/footer-tota.vue'
-if (process.client) {
+
+if (process.client) { // running a client-side javascript for cookieconsent
 	require('cookieconsent');
 	window.cookieconsent.initialise({
+		cookie: {
+			name: 'tota_cookieconsent',
+			domain: 'tota.sk',
+		},
 		palette: {
 			popup: {
-				background: '#edeff5',
-				text: '#838391'
+				background: '#393939',
+				text: '#fff',
+				link: '#fff'
 			},
-			button: {
-				background: '#4b81e8'
-			},
+		},
+		elements: {
+			dismiss: '<a aria-label="allow cookies" tabindex="0" class="btn btn--cta">Rozumiem</a>',
 		},
 		theme: 'classic',
 		content: {
-			message: 'TBD custom cookies to go here.',
-			dismiss: 'ozaj',
-			link: 'Tuna citaj podmienky pouzivania',
-			href: '/podmienky-pouzivania'
+			message: 'Používame súbory cookies, ktoré nám umožňujú poskytovať lepšie služby. Používaním nášho webu súhlasíte s ukládaním a používaním súborov cookies.',
+			link: '(viac informácií)',
+			href: '/podmienky-pouzivania',
+			target: 'blank'
 		},
 	});
 }
@@ -55,5 +61,12 @@ export default {
 		@media (min-width: $screen-xs-min) {
 			padding-top: $header-height;
 		}
+	}
+	
+	
+	.cc-banner {
+		font-family: $font-family--base;
+		font-size: $font-size--400;
+		line-height: $line-height--500;		
 	}
 </style>
