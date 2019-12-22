@@ -22,9 +22,6 @@ export const actions = {
 		await this.$deliveryClient
 					.items()
 					.equalsFilter('system.codename', 'project_list')
-					.queryConfig({
-						usePreviewMode: true
-					})
 					.toPromise()
 					.then(response => {
 						state.commit('setProjects', response.items[0].project_list.value.map(item => ({
@@ -50,7 +47,7 @@ export const actions = {
 					.items()
 					.type('project')
 					.queryConfig({
-						usePreviewMode: true
+						usePreviewMode: false
 					})
 					.equalsFilter('elements.meta__canonical_url', payload.canonical)
 					.depthParameter(2)

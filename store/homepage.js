@@ -13,9 +13,6 @@ export const actions = {
 		await this.$deliveryClient
 					.items()
 					.equalsFilter('system.codename', 'homepage')
-					.queryConfig({
-						usePreviewMode: true
-					})
 					.toPromise()
 					.then(response => {
 						state.commit('setHomepage', ({

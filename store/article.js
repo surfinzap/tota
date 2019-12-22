@@ -13,9 +13,6 @@ export const actions = {
 		await this.$deliveryClient
 					.items()
 					.type('article')
-					.queryConfig({
-						usePreviewMode: true
-					})
 					.equalsFilter('elements.meta__canonical_url', payload.canonical)
 					.toPromise()
 					.then(response => {
