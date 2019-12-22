@@ -26,7 +26,8 @@ if (process.client) { // running a client-side javascript for cookieconsent
 			},
 		},
 		elements: {
-			dismiss: '<a aria-label="allow cookies" tabindex="0" class="btn btn--cta">Rozumiem</a>',
+			dismiss: '<div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss btn btn--cta">Rozumiem</a></div>',
+			//dismiss: '<a aria-label="dismiss cookie message" role="button" tabindex="0" class="btn btn--cta">Rozumiem</a>',
 		},
 		theme: 'classic',
 		content: {
