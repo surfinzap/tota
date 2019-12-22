@@ -21,7 +21,7 @@ export const actions = {
 					.then(response => {
 						state.commit('setArticle', ({
 							title: response.items[0].title.value,
-							content: response.items[0].content.value,
+							content: response.items[0].content.resolveHtml(),
 							meta__canonical_url: response.items[0].meta__canonical_url.value,
 							meta__description: response.items[0].meta__description.value,
 							meta__keywords: response.items[0].meta__keywords.value,
