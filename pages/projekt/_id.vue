@@ -11,12 +11,14 @@
 							p.project__header-description {{ project.short_description }}
 		.container
 			.grid
-				.project__content(v-html='project.content')
+				rich-text(:blocks='project.content' htmlClass='project__content')
 </template>
 
 <script>
+	import RichText from '../../components/rich-text';
 	export default {
 		scrollToTop: true,
+		components: {RichText},
 
 		async fetch ({store, params, route}) {
 			await store.dispatch({
