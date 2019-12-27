@@ -2,6 +2,7 @@ import { SortOrder,
 				 ImageUrlBuilder,
 				 ImageCompressionEnum,
 				 ImageFitModeEnum} from '@kentico/kontent-delivery'
+import { parseHtml} from "../utils/parseHtml";
 
 export const state = () => ({
 	projects: [],
@@ -27,7 +28,7 @@ export const actions = {
 						state.commit('setProjects', response.items[0].project_list.value.map(item => ({
 							title: item.title.value,
 							short_description: item.short_description.value,
-							content: item.content.resolveHtml(),
+							content: parseHtml(item.content.value),
 							image: new ImageUrlBuilder(item.image.value[0].url)
 								.withQuality(80)
 								.withWidth(768)
@@ -56,7 +57,7 @@ export const actions = {
 						state.commit('setProject', ({
 							title: response.items[0].title.value,
 							short_description: response.items[0].short_description.value,
-							content: response.items[0].content.resolveHtml(),
+							content: parseHtml(response.items[0].content.value),
 							image: response.items[0].image.value[0].url,
 							image_description: response.items[0].image.value[0].description,
 							meta__canonical_url: response.items[0].meta__canonical_url.value,
