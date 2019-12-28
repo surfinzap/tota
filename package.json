@@ -21,7 +21,8 @@
     "moment": "^2.24.0",
     "nuxt": "^2.0.0",
     "rxjs": "^6.5.3",
-    "translit-rue": "^2.0.0"
+    "translit-rue": "^2.0.0",
+    "vue-fragment": "^1.5.1"
   },
   "devDependencies": {
     "@nuxtjs/google-analytics": "^2.2.2",
