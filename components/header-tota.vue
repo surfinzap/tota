@@ -6,7 +6,7 @@
 
 
 <script>
-import Logotype from '~/components/Logotype.vue'
+import Logotype from '~/components/Logotype.vue';
 
 export default {
 	components: {
