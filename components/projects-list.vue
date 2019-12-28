@@ -3,7 +3,7 @@
 		ul.project-list
 			li.project-tile(v-for='project in projects' v-bind:key='project.meta__canonical_url')
 
-				a.project-tile__link(v-if='project.external_url' :href='project.meta__canonical_url' target='_blank')
+				nuxt-link.project-tile__link(v-if='project.is_translit' :to='project.meta__canonical_url')
 					.project-tile__credentials(:style='"background-color:" + project.color + ";"')
 						h2.project-tile__title {{ project.title }}
 						p.project-tile__description {{ project.short_description }}

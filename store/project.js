@@ -36,7 +36,7 @@ export const actions = {
 							image_description: item.image.value[0].description,
 							meta__canonical_url: item.meta__canonical_url.value,
 							color: item.color.value,
-							external_url: item.meta__canonical_url.value.includes('http') ? true : false,
+							is_translit: item.meta__canonical_url.value.includes('translit') ? true : false,
 						})))
 					})
 					.catch(err => console.log('error: ' + err));
