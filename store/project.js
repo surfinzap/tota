@@ -66,6 +66,7 @@ export const actions = {
 							meta__image: response.items[0].meta__image.value[0].url,
 							meta__image__description: response.items[0].meta__image.value[0].description,
 							color: response.items[0].color.value,
+							linked_items: response.linkedItems, // TODO I'll need to parseHtml from the content of the rich text elements if there are any.
 						}));
 					})
 					.catch(err => console.log('error:' + err));
