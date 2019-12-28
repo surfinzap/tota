@@ -27,9 +27,6 @@
 		},
 
 		computed: {
-			canonicalUrl () {
-				return this.$route.params.id
-			},
 			project () {
 				return this.$store.state.project.project;
 			},
@@ -57,7 +54,7 @@
 					{ rel: 'canonical', href: this.$store.state.homepage.homepage.meta__canonical_url + 'projekt/' + this.$store.state.project.project.meta__canonical_url }
 				]
 			}
-		},
+		}
 	}
 </script>
 
@@ -144,19 +141,5 @@
 		}
 	}
 
-	.project__content {
-		padding: 0 $grid-gap-column * 1;
 
-		@media (min-width: $screen-xs-min) {
-			padding: 0 $grid-gap-column * 2;
-		}
-
-		@media (min-width: $screen-sm-min) {
-			padding: 0;
-			grid-column: 2 / span 12;
-		}
-		@media (min-width: $screen-md-min) {
-			grid-column: 3 / span 10;
-		}
-	}
 </style>
