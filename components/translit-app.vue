@@ -37,7 +37,15 @@ export default {
 <style lang='scss'>
 	.translit-app {
 		background-color: $gray--10;
-		padding: ($grid-unit * 3) 0;
+		padding: ($grid-unit * 3) ($grid-unit * 4);
+		
+		@media (min-width: $screen-xs-min) {
+			padding: ($grid-unit * 3) ($grid-unit * 8);
+		}
+		
+		@media (min-width: $screen-sm-min) {
+			padding: ($grid-unit * 3) 0;
+		}
 	}
 	
 	.translit-app__action-panel {
