@@ -37,7 +37,6 @@ module.exports = {
 	** Plugins to load before mounting the App
 	*/
 	plugins: [
-		"~/plugins/kenticoKontentNuxtModule"
 	],
 	/*
 	** Nuxt.js dev-modules

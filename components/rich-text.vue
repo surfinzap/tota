@@ -1,6 +1,6 @@
 <template lang="pug">
-	div(:class='htmlClass')
-		rich-text-block(v-for='(block, index) in blocks' :block='block' :key='index')
+	div
+		rich-text-block(v-for='(block, index) in blocks' :block='block' :linkedItems='linkedItems' :resolvers='resolvers' :key='index')
 </template>
 
 <script>
@@ -8,6 +8,6 @@
 	export default {
 		name: 'rich-text',
 		components: {RichTextBlock},
-		props: ['htmlClass', 'blocks']
+		props: ['blocks', 'linkedItems', 'resolvers'],
 	}
 </script>
