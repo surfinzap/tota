@@ -1,6 +1,6 @@
 <template lang="pug">
 	div(:class='htmlClass')
-		rich-text-block(v-for='block in blocks' :block='block')
+		rich-text-block(v-for='(block, index) in blocks' :block='block' :key='index')
 </template>
 
 <script>
