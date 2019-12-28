@@ -23,7 +23,7 @@ $btn-font-size-sm:            $font-size--300 !default;
 
 $btn-border-width:            0 !default;
 
-$btn-font-weight:             500 !default;
+$btn-font-weight:             800 !default;
 $btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
 $btn-focus-width:             .2em !default;
 $btn-focus-box-shadow:        0 0 0 $red $red !default;
@@ -73,6 +73,10 @@ $btn-transition:              color .15s ease-in-out, background-color .15s ease
 	&:hover {
 		text-decoration: none;
 		background-color: $btn-bg-color-hover;
+	}
+
+	&:focus {
+		outline-style: none;
 	}
 }
 
