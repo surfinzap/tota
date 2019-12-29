@@ -2,7 +2,8 @@
 	// TODO This wrapper is not present in the original. Do we want to ressurect the vue-fragment package?
 	div
 		h3 {{item.title.value}}
-		rich-text.cp--pos-list(:blocks='parseHtml(item.resellers_list.value)' :linkedItems='linkedItems' :resolvers='richTextResolvers')
+		.cp--pos-list
+			rich-text(:blocks='parseHtml(item.resellers_list.value)' :linkedItems='linkedItems' :resolvers='richTextResolvers')
 </template>
 
 <script>

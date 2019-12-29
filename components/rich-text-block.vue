@@ -4,16 +4,13 @@
 	export default {
 		functional: true,
 		name: 'rich-text-block',
-		props: ['block', 'linkedItems', 'resolvers'],
-		components: {
-			'rich-text-block': () => import('./rich-text-element.vue')
-		},
+		props: ['block', 'linkedItems', 'resolvers', 'blockComponent'],
 		render: (createElement, context) => {
 			const {props} = context;
-			const {block, linkedItems, resolvers} = props;
+			const {block, linkedItems, resolvers, blockComponent} = props;
 
 			return createElement(RichTextElement, {props}, block.children.map(child =>
-				createElement('rich-text-block', {props: {block: child, linkedItems, resolvers}})));
+				createElement(blockComponent, {props: {block: child, linkedItems, resolvers}})));
 		}
 	}
 </script>
