@@ -4,18 +4,22 @@
 			translit-app
 		.container
 			.grid
-				.project__content(v-html='project.content')
+				rich-text.project__content(:blocks='parseHtml(project.content)' :linkedItems='project.linked_items' :resolvers='richTextResolvers')
 </template>
 
 
 <script>
 import TranslitApp from '~/components/translit-app.vue'
+import RichText from '../components/rich-text';
+import linkedItemComponents from "../components/linked-items";
+import {parseHtml} from "../utils/parseHtml";
 
 export default {
 	scrollToTop: true,
 
 	components: {
-		TranslitApp
+		TranslitApp,
+		RichText
 	},
 
 	async fetch ({store, params, route}) {
@@ -30,8 +34,11 @@ export default {
 		project () {
 			return this.$store.state.project.project;
 		},
+		richTextResolvers() {
+			return linkedItemComponents;
+		}
 	},
-	
+	methods: { parseHtml },
 	head () {
 		return {
 			title: this.$store.state.project.project.title + ' — ' + this.$store.state.homepage.homepage.title,
