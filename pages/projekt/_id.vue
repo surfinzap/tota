@@ -11,12 +11,13 @@
 							p.project__header-description {{ project.short_description }}
 		.container
 			.grid
-				rich-text.project__content(:blocks='project.content' :linkedItems='project.linked_items' :resolvers='richTextResolvers')
+				rich-text.project__content(:blocks='parseHtml(project.content)' :linkedItems='project.linked_items' :resolvers='richTextResolvers')
 </template>
 
 <script>
 	import RichText from '../../components/rich-text';
 	import linkedItemComponents from '../../components/linked-items';
+	import {parseHtml} from "../../utils/parseHtml";
 
 	export default {
 		scrollToTop: true,
@@ -38,7 +39,7 @@
 				return linkedItemComponents;
 			}
 		},
-
+		methods: { parseHtml },
 		head () {
 			return {
 				title: this.$store.state.project.project.title + ' — ' + this.$store.state.homepage.homepage.title,
