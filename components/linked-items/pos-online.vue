@@ -1,6 +1,5 @@
 <template lang="pug">
 	.cp--pos-item(:class='{"cp--pos-item--primary": isPrimary}')
-		// TODO the rich-text produces an extra div, do we want to allow extra children at the end of the rich text value?
 		rich-text(:blocks='parseHtml(item.pos.value)' :linkedItems='linkedItems' :resolvers='richTextResolvers')
 		.cp--pos-item__action
 			a.btn.btn--block(:class='{"btn--cta": isPrimary}' :href='`${item.url.value}&utm_source=${item.utm_source.value}&utm_medium=${item.utm_medium.value}&utm_campaign=${item.utm_campaign.value}`' target='_blank')

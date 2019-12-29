@@ -11,7 +11,8 @@
 							p.project__header-description {{ project.short_description }}
 		.container
 			.grid
-				rich-text.project__content(:blocks='parseHtml(project.content)' :linkedItems='project.linked_items' :resolvers='richTextResolvers')
+				.project__content
+					rich-text(:blocks='parseHtml(project.content)' :linkedItems='project.linked_items' :resolvers='richTextResolvers')
 </template>
 
 <script>

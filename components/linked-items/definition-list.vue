@@ -1,5 +1,6 @@
 <template lang="pug">
-	rich-text.cp--dl(containerElement='dl' :blocks='parseHtml(item.definition_list.value)' :linkedItems='linkedItems' :resolvers='richTextResolvers')
+	dl.cp--dl
+		rich-text(:blocks='parseHtml(item.definition_list.value)' :linkedItems='linkedItems' :resolvers='richTextResolvers')
 </template>
 
 <script>

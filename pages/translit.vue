@@ -4,7 +4,8 @@
 			translit-app
 		.container
 			.grid
-				rich-text.project__content(:blocks='parseHtml(project.content)' :linkedItems='project.linked_items' :resolvers='richTextResolvers')
+				.project__content
+					rich-text(:blocks='parseHtml(project.content)' :linkedItems='project.linked_items' :resolvers='richTextResolvers')
 </template>
 
 

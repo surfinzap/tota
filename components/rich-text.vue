@@ -1,14 +1,14 @@
-<template lang="pug">
-	rich-text-container(:element='containerElement')
-		rich-text-block(v-for='(block, index) in blocks' :block='block' :linkedItems='linkedItems' :resolvers='resolvers' :key='index')
-</template>
-
 <script>
 	import RichTextBlock from './rich-text-block';
-	import RichTextContainer from './rich-text-container';
 	export default {
 		name: 'rich-text',
-		components: {RichTextBlock, RichTextContainer},
-		props: ['containerElement', 'blocks', 'linkedItems', 'resolvers'],
+		functional: true,
+		props: ['blocks', 'linkedItems', 'resolvers'],
+		render: (createElement, context) => {
+			const { blocks, linkedItems, resolvers } = context.props;
+
+			return blocks.map(block =>
+				createElement(RichTextBlock, { props: { block, linkedItems, resolvers, blockComponent: RichTextBlock }}));
+		}
 	}
 </script>

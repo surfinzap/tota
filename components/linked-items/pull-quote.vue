@@ -1,5 +1,6 @@
 <template lang="pug">
-	rich-text(container-element='blockquote' :blocks='parseHtml(item.pull_quote.value)')
+	blockquote
+		rich-text(:blocks='parseHtml(item.pull_quote.value)')
 </template>
 
 <script>
