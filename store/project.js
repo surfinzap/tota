@@ -2,7 +2,6 @@ import { SortOrder,
 				 ImageUrlBuilder,
 				 ImageCompressionEnum,
 				 ImageFitModeEnum} from '@kentico/kontent-delivery'
-import { parseHtml} from "../utils/parseHtml";
 
 export const state = () => ({
 	projects: [],
@@ -28,7 +27,7 @@ export const actions = {
 						state.commit('setProjects', response.items[0].project_list.value.map(item => ({
 							title: item.title.value,
 							short_description: item.short_description.value,
-							content: parseHtml(item.content.value),
+							content: item.content.value,
 							image: new ImageUrlBuilder(item.image.value[0].url)
 								.withQuality(80)
 								.withWidth(768)
@@ -57,7 +56,7 @@ export const actions = {
 						state.commit('setProject', ({
 							title: response.items[0].title.value,
 							short_description: response.items[0].short_description.value,
-							content: parseHtml(response.items[0].content.value),
+							content: response.items[0].content.value,
 							image: response.items[0].image.value[0].url,
 							image_description: response.items[0].image.value[0].description,
 							meta__canonical_url: response.items[0].meta__canonical_url.value,
@@ -66,7 +65,7 @@ export const actions = {
 							meta__image: response.items[0].meta__image.value[0].url,
 							meta__image__description: response.items[0].meta__image.value[0].description,
 							color: response.items[0].color.value,
-							linked_items: response.linkedItems, // TODO I'll need to parseHtml from the content of the rich text elements if there are any.
+							linked_items: response.linkedItems,
 						}));
 					})
 					.catch(err => console.log('error:' + err));

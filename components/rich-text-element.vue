@@ -5,13 +5,13 @@
 		props: ['block', 'linkedItems', 'resolvers'],
 		render: (createElement, context) => {
 			const { block, linkedItems, resolvers } = context.props;
+
 			switch (block.type) {
 				case 'OBJECT': {
 					const linkedItem = linkedItems[block.data['data-codename']];
 					const { system, ...elements } = linkedItem;
 					const component = resolvers[system.type];
 					if (component) {
-						console.log(elements);
 						return createElement(component, {props: { item: {...elements}}}, context.children);
 					} else {
 						return createElement('object', {domProps: {...block.data}}, context.children);
