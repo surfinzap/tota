@@ -27,7 +27,6 @@ if (process.client) { // running a client-side javascript for cookieconsent
 		},
 		elements: {
 			dismiss: '<div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss btn btn--cta">Rozumiem</a></div>',
-			//dismiss: '<a aria-label="dismiss cookie message" role="button" tabindex="0" class="btn btn--cta">Rozumiem</a>',
 		},
 		theme: 'classic',
 		content: {
@@ -63,11 +62,11 @@ export default {
 			padding-top: $header-height;
 		}
 	}
-	
-	
+
+
 	.cc-banner {
 		font-family: $font-family--base;
 		font-size: $font-size--400;
-		line-height: $line-height--500;		
+		line-height: $line-height--500;
 	}
 </style>
