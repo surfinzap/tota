@@ -17,7 +17,7 @@
 
 <script>
 	import RichText from '../../components/rich-text';
-	import LinkedItem from '../../components/linked-item';
+	import LinkedItem from '../../components/project-linked-item';
 
 	export default {
 		scrollToTop: true,
