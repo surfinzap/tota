@@ -5,7 +5,7 @@
 
 <script>
 	import RichText from '../rich-text';
-	import LinkedItem from '../linked-item';
+	import LinkedItem from '../project-linked-item';
 
 	export default {
 		props: ['item'],
