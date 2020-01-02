@@ -5,15 +5,14 @@
 		.container
 			.grid
 				.project__content
-					rich-text(:blocks='parseHtml(project.content)' :linkedItems='project.linked_items' :resolvers='richTextResolvers')
+					rich-text(:content='project.content' :linkedItemComponent='linkedItemComponent')
 </template>
 
 
 <script>
 import TranslitApp from '~/components/translit-app.vue'
 import RichText from '../components/rich-text';
-import linkedItemComponents from "../components/linked-items";
-import {parseHtml} from "../utils/parseHtml";
+import LinkedItem from '../components/linked-item';
 
 export default {
 	scrollToTop: true,
@@ -30,16 +29,14 @@ export default {
 		});
 		await store.dispatch('homepage/getHomepage');
 	},
-
 	computed: {
 		project () {
 			return this.$store.state.project.project;
 		},
-		richTextResolvers() {
-			return linkedItemComponents;
+		linkedItemComponent() {
+			return LinkedItem;
 		}
 	},
-	methods: { parseHtml },
 	head () {
 		return {
 			title: this.$store.state.project.project.title + ' — ' + this.$store.state.homepage.homepage.title,

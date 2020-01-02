@@ -1,14 +1,18 @@
 <script>
 	import RichTextBlock from './rich-text-block';
+	import {parseHtml} from "../utils/parseHtml";
 	export default {
 		name: 'rich-text',
 		functional: true,
-		props: ['blocks', 'linkedItems', 'resolvers'],
+		props: ['content', 'linkedItemComponent'],
 		render: (createElement, context) => {
-			const { blocks, linkedItems, resolvers } = context.props;
+			const { content, linkedItemComponent } = context.props;
+
+			// A temporary measure until delivery API returns something one can machine process
+			const blocks = parseHtml(content);
 
 			return blocks.map(block =>
-				createElement(RichTextBlock, { props: { block, linkedItems, resolvers, blockComponent: RichTextBlock }}));
+				createElement(RichTextBlock, { props: { block, linkedItemComponent, blockComponent: RichTextBlock }}));
 		}
 	}
 </script>
