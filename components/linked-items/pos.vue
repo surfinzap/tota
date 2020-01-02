@@ -1,12 +1,14 @@
-<template lang="pug">
-	// TODO extra wrapper yet again
-	div
-		h4.cp--pos-item__title {{item.title.value}}
-		.cp--pos-item__description {{item.description.value}}
-</template>
-
 <script>
 	export default {
-		props: ['item']
+		functional: true,
+		props: ['item'],
+		render: (createElement, context) => {
+			const {item} = context.props;
+
+			return [
+				createElement('h4', { 'class': 'cp--pos-item__title'}, item.title.value),
+				createElement('div', {'class': 'cp--pos-item__description'}, item.description.value)
+			];
+		}
 	}
 </script>
