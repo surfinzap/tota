@@ -3,24 +3,19 @@
 	div
 		h3 {{item.title.value}}
 		.cp--pos-list
-			rich-text(:blocks='parseHtml(item.resellers_list.value)' :linkedItems='linkedItems' :resolvers='richTextResolvers')
+			rich-text(:content='item.resellers_list.value' :linkedItemComponent='linkedItemComponent')
 </template>
 
 <script>
 	import RichText from '../rich-text';
-	import { parseHtml } from '../../utils/parseHtml';
-	import linkedItemComponents from "./index";
+	import LinkedItem from '../linked-item';
 
 	export default {
 		props: ['item'],
-		components: { RichText },
-		methods: { parseHtml },
+		components: {RichText},
 		computed: {
-			linkedItems() {
-				return this.$store.state.project.project.linked_items;
-			},
-			richTextResolvers() {
-				return linkedItemComponents;
+			linkedItemComponent() {
+				return LinkedItem;
 			}
 		}
 	}

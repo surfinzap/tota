@@ -2,21 +2,13 @@
 	export default {
 		name: 'rich-text-element',
 		functional: true,
-		props: ['block', 'linkedItems', 'resolvers'],
+		props: ['block', 'linkedItemComponent'],
 		render: (createElement, context) => {
-			const { block, linkedItems, resolvers } = context.props;
+			const { block, linkedItemComponent } = context.props;
 
 			switch (block.type) {
-				case 'OBJECT': {
-					const linkedItem = linkedItems[block.data['data-codename']];
-					const { system, ...elements } = linkedItem;
-					const component = resolvers[system.type];
-					if (component) {
-						return createElement(component, {props: { item: {...elements}}}, context.children);
-					} else {
-						return createElement('object', {domProps: {...block.data}}, context.children);
-					}
-				}
+				case 'OBJECT':
+					return createElement(linkedItemComponent, {props: { block }});
 				case '#text':
 					return context._v(block.value);
 				default:

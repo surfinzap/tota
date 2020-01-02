@@ -1,23 +1,18 @@
 <template lang="pug">
 	dl.cp--dl
-		rich-text(:blocks='parseHtml(item.definition_list.value)' :linkedItems='linkedItems' :resolvers='richTextResolvers')
+		rich-text(:content='item.definition_list.value' :linkedItemComponent='linkedItemComponent')
 </template>
 
 <script>
-	import {parseHtml} from "../../utils/parseHtml";
-	import linkedItemComponents from "./index";
 	import RichText from '../rich-text';
+	import LinkedItem from '../linked-item';
 
 	export default {
 		props: ['item'],
 		components: {RichText},
-		methods: {parseHtml},
 		computed: {
-			linkedItems() {
-				return this.$store.state.project.project.linked_items;
-			},
-			richTextResolvers() {
-				return linkedItemComponents;
+			linkedItemComponent() {
+				return LinkedItem;
 			}
 		}
 	}
