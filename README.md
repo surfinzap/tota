@@ -10,7 +10,7 @@ I’ve documented few examples of how I applied the technology, check out the [C
 # <a name="contents"></a> Contents
 * [Build setup](#build-setup)
 * Examples of use
-	* [Setting up project detail](#project-detail)
+	* [Rendering the project detail](#project-detail) (Rendering pages of one type)
 	* Rendering Rich-text components (as in Kentico Kontent components)
 	* Custom list of projects
 	* Combining Single-page application (SPA) and server-side rendered portion of page
@@ -41,8 +41,8 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 # Examples of use
 
-## <a name="project-detail"></a> Setting up project detail
-
+## <a name="project-detail"></a> Rendering project detail (Rendering pages of one type)
+ 
 
 
 # <a name="special-thanks"></a> Special thanks
