@@ -3,10 +3,13 @@
 		.grid
 			.article
 				h1 {{ article.title }}
-				div.article__content(v-html='article.content')
+				.article__content
+					rich-text(:content='article.content')
 </template>
 
 <script>
+	import RichText from '../components/rich-text';
+
 	export default {
 		scrollToTop: true,
 
@@ -17,7 +20,7 @@
 			});
 			await store.dispatch('homepage/getHomepage');
 		},
-
+		components: { RichText },
 		computed: {
 			canonicalUrl () {
 				return this.$route.params.id
