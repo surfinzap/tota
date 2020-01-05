@@ -1,6 +1,6 @@
 <script>
 	import RichTextBlock from './rich-text-block';
-	import {parseHtml} from "../utils/parseHtml";
+	import {parseHtml} from "./parseHtml";
 	export default {
 		name: 'rich-text',
 		functional: true,

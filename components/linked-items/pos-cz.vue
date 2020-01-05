@@ -6,7 +6,7 @@
 </template>
 
 <script>
-	import RichText from '../rich-text';
+	import RichText from '../would-be-sdk/rich-text';
 
 	export default {
 		props: ['item'],

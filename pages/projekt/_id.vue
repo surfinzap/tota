@@ -16,7 +16,7 @@
 </template>
 
 <script>
-	import RichText from '../../components/rich-text';
+	import RichText from '../../components/would-be-sdk/rich-text';
 	import LinkedItem from '../../components/linked-item';
 
 	export default {

@@ -1,5 +1,5 @@
 <script>
-	import linkedItemFactory from './linked-item-factory';
+	import linkedItemFactory from './would-be-sdk/linked-item-factory';
 
 	import FigureImage from './linked-items/figure-image';
 	import Pos from './linked-items/pos';
