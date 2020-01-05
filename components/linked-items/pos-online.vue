@@ -8,7 +8,7 @@
 
 <script>
 	import RichText from '../rich-text';
-	import LinkedItem from '../project-linked-item';
+	import LinkedItem from '../linked-item';
 
 	export default {
 		props: ['item'],

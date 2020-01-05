@@ -1,4 +1,6 @@
 <script>
+	import linkedItemFactory from './linked-item-factory';
+
 	import FigureImage from './linked-items/figure-image';
 	import Pos from './linked-items/pos';
 	import PosCz from './linked-items/pos-cz';
@@ -31,27 +33,16 @@
 		'procurement_item': ProcurementItem,
 	};
 
-	const getItemData = (block, context) => {
-		const linkedItems = context.parent.$store.state.project.project.linked_items;
-
-		return linkedItems[block.data['data-codename']];
-	};
-
 	export default {
-		name: 'linked-item',
 		functional: true,
-		props: ['block'],
+		inject: ['getLinkedItems'],
 		render: (createElement, context) => {
-			const {block} = context.props;
-			const linkedItem = getItemData(block, context);
-			const { system, ...elements } = linkedItem;
-			const component = resolvers[system.type];
+			const {props, children, injections} = context;
+			const component = linkedItemFactory(
+				itemType => resolvers[itemType],
+				itemCodeName => injections.getLinkedItems()[itemCodeName]);
 
-			if (component) {
-				return createElement(component, {props: { item: {...elements}}}, context.children);
-			} else {
-				return createElement('object', {domProps: {...block.data}}, context.children);
-			}
+			return createElement(component, {props}, children);
 		}
 	}
 </script>

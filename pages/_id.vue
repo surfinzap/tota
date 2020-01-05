@@ -4,11 +4,12 @@
 			.article
 				h1 {{ article.title }}
 				.article__content
-					rich-text(:content='article.content')
+					rich-text(:content='article.content' :linkedItemComponent='linkedItemComponent')
 </template>
 
 <script>
 	import RichText from '../components/rich-text';
+	import LinkedItem from "../components/linked-item";
 
 	export default {
 		scrollToTop: true,
@@ -28,6 +29,14 @@
 			article () {
 				return this.$store.state.article.article;
 			},
+			linkedItemComponent() {
+				return LinkedItem;
+			}
+		},
+		provide () {
+			return {
+				getLinkedItems: () => this.$store.state.article.article.linked_items,
+			};
 		},
 		head () {
 			return {

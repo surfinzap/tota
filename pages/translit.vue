@@ -12,7 +12,7 @@
 <script>
 import TranslitApp from '~/components/translit-app.vue'
 import RichText from '../components/rich-text';
-import LinkedItem from '../components/project-linked-item';
+import LinkedItem from '../components/linked-item';
 
 export default {
 	scrollToTop: true,
@@ -35,6 +35,11 @@ export default {
 		},
 		linkedItemComponent() {
 			return LinkedItem;
+		}
+	},
+	provide () {
+		return {
+			getLinkedItems: () => this.$store.state.project.project.linked_items,
 		}
 	},
 	head () {
