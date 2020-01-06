@@ -13,7 +13,7 @@ Even though I’m not a developer, I wanted to try a new technology. So I’ve r
 	* Rendering Rich-text components (as in Kentico Kontent components)
 	* [Custom list of projects](#custom-list)
 	* [Combining Single-page application (SPA) and server-side rendered content](#spa)
-	* Generating Sitemap
+	* [Generating static site and sitemap](#static-site)
 	* Rendering SEO metadata
 	* Cookies
 * [Special thanks](#special-thanks)
@@ -95,6 +95,16 @@ Take a look at how it's used in code:
 	* translit-app component therefore works as SPA on its own
 * by the way, if you’d ever need a transliteration script, it’s also available on GitHub as a [separate library—translit](https://github.com/surfinzap/translit).
 
+
+## <a name="static-site"></a> Generating static site and sitemap
+
+### Static site
+When you’re running Nuxt.js in [Universal SSR mode](https://nuxtjs.org/guide#server-rendered-universal-ssr-), [generating a static site](https://nuxtjs.org/guide#static-generated-pre-rendering-) is easy—you call `npm run generate`. You will get a static HTML file for each page you have. However, the static generation is not including dynamic pages by default.
+
+In this project, majority of content are dynamic pages (projects and articles, in particular). If I wanted to generate static files of them, I had to include the routes in `nuxt.config.js` file. Here’s the [official documentation](https://nuxtjs.org/api/configuration-generate#function-which-returns-a-promise) and here’s how I adjusted my [`nuxt.config.js`](`nuxt.config.js`) file. There are two promises calling for a list of projects and for list of articles. 
+
+### Sitemap
+I have used [@nuxtjs/sitemap](https://github.com/nuxt-community/sitemap-module) to auto-generate a Sitemap. This module will generate sitemap.xml for those pages that are known, i.e. not for the dynamic pages. But if you set the routes as we already did for the purpose of generating a static site, you are all set. By the way, the module is rather robust and I’m only using a portion of it. However, if you’d like to take a look at my config, take a look at [`nuxt.config.js`](`nuxt.config.js`) file.
 
 
 # <a name="special-thanks"></a> Special thanks
