@@ -12,7 +12,7 @@ Even though I’m not a developer, I wanted to try a new technology. So I’ve r
 	* [Rendering the project detail](#project-detail) (Rendering pages of one type)
 	* Rendering Rich-text components (as in Kentico Kontent components)
 	* [Custom list of projects](#custom-list)
-	* Combining Single-page application (SPA) and server-side rendered portion of page
+	* [Combining Single-page application (SPA) and server-side rendered content](#spa)
 	* Generating Sitemap
 	* Rendering SEO metadata
 	* Cookies
@@ -63,7 +63,7 @@ The template for project detail is located at [pages/projekt/_id.vue](pages/proj
 
 
 ## Rendering Rich-text components
-
+TBD
 
 
 ## <a name="custom-list"></a> Custom list of projects
@@ -78,8 +78,22 @@ All projects are stored as a structured content in [Kentico Kontent](https://kon
 	* project detail is in “projects” state with corresponding mutation/action
 * using [kentico-kontent-nuxt-module](https://github.com/Domitnator/kentico-kontent-nuxt-module) to get content via Delivery API. Check out [its documentation](https://github.com/Domitnator/kentico-kontent-nuxt-module) or [nuxt.config.js](nuxt.config.js) to see a configuration for this repository.
 
-### Projects list Vue component 
+### Projects list — Vue component 
 Vue component is located at [pages/components/projects-list.vue](pages/components/projects-list.vue); as a component it’s used at [pages/index.vue](pages/index.vue)
+
+
+## <a name="spa"></a> Combining Single-page application (SPA) and server-side rendered content
+Almost all the projects at tota.sk were offline projects (e.g. [this book](https://tota.sk/projekt/any-by-ste-ne-viryly)). But one project—[translit](https://tota.sk/translit)—is different. It’s an online project, a single page application to transliterate Rusyn language from Cyrillic script to Latin alphabet and vice versa.
+
+Here’s the thing. By default, Nuxt.js can work in [one of the two modes](https://nuxtjs.org/guide#server-rendered-universal-ssr-)—as a Universal SSR (Server-side rendering) or an SPA (single page application). You have to choose one mode and I’ve chosen Universal SSR (for SEO reasons + I wanted to generate a static site).
+
+I though it may be a problem if I’d like to run JavaScript on a client-side while the whole repo is in Server-side rendering mode. Fortunately, the Nuxt has a [`<client-only>`](https://nuxtjs.org/api/components-client-only#the-lt-client-only-gt-component) component that let’s you wrap a portion of code that is supposed to be executed at client. 
+
+Take a look at how it's used in code:
+* translit as a page is at [pages/translit.vue](pages/translit.vue)
+	* within the file, there is [translit-app component](components/translit-app. vue) that is wrapped in [`<client-only>`] component (fyi I’m using [pug templating](https://pugjs.org/api/getting-started.html), so there are no `<>` html brackets)
+	* translit-app component therefore works as SPA on its own
+* by the way, if you’d ever need a transliteration script, it’s also available on GitHub as a [separate library—translit](https://github.com/surfinzap/translit).
 
 
 
