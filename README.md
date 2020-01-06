@@ -14,8 +14,7 @@ Even though I’m not a developer, I wanted to try a new technology. So I’ve r
 	* [Custom list of projects](#custom-list)
 	* [Combining Single-page application (SPA) and server-side rendered content](#spa)
 	* [Generating static site and sitemap](#static-site)
-	* Rendering SEO metadata
-	* Cookies
+	* [Adding Cookie Consent](#cookie-consent)
 * [Special thanks](#special-thanks)
 * [License](#license)
 
@@ -107,8 +106,13 @@ In this project, majority of content are dynamic pages (projects and articles, i
 I have used [@nuxtjs/sitemap](https://github.com/nuxt-community/sitemap-module) to auto-generate a Sitemap. This module will generate sitemap.xml for those pages that are known, i.e. not for the dynamic pages. But if you set the routes as we already did for the purpose of generating a static site, you are all set. By the way, the module is rather robust and I’m only using a portion of it. However, if you’d like to take a look at my config, take a look at [`nuxt.config.js`](`nuxt.config.js`) file.
 
 
+## <a name="cookie-consent"></a> Adding Cookie Consent
+I have decided to use the [cookieconsent NPM package](https://www.npmjs.com/package/cookieconsent). It seemed to have a lot [configuration options](https://www.osano.com/cookieconsent/documentation/javascript-api/). However, the JavaScript configuration has to be executed at client side (I have talked about Server vs. Client server rendering [elsewhere](#spa)). 
+
+Here’s [the documentation](https://nuxtjs.org/faq/window-document-undefined#window-or-document-undefined-) of how you can run client-side JS in SSR mode. Here’s how I have included the configuration in the [master template](layouts/default.vue).
+
 # <a name="special-thanks"></a> Special thanks
-TBD vits
+TBD [@vit-svoboda](https://github.com/vit-svoboda)
 
 # <a name="license"></a> License
 Feel free to get inspired by the code snippets. All other content (written content and logotypes related to tota agentura) are copyrighted.
