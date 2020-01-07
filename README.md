@@ -63,7 +63,10 @@ Here are extra notes on what is happening inside the file (TBD make it inline co
 * project’s content is stored as a Rich-text with couple of nested components. We’ll cover the rendering of Rich-text in the following example.
 
 
-## Rendering Rich-text components
+## <a name="rich-text"></a> Rendering Rich-text components
+### Content model
+In Kentico Kontent, you extend Rich-text editor functionality with custom inline [Components](https://docs.kontent.ai/tutorials/write-and-collaborate/structure-your-content/structuring-editorial-articles-with-components). With Components, you can achieve more rich content for visitors and still get nicely structured response from [Delivery API](https://docs.kontent.ai/reference/delivery-api). I have been using components a lot, if you take a look at [this project](https://tota.sk/projekt/cervenyj-bereh), there couple of Components within the Rich-text: Image with Caption, YouTube Video, Point-of-sale list, Publication Info. You can find a list of all components [here TBD](tbd.tbd).
+
 TBD
 
 
@@ -117,7 +120,7 @@ I have decided to use the [cookieconsent NPM package](https://www.npmjs.com/pack
 Here’s [the documentation](https://nuxtjs.org/faq/window-document-undefined#window-or-document-undefined-) of how you can run client-side JS in SSR mode. Here’s how I have included the configuration in the [master template](layouts/default.vue).
 
 # <a name="special-thanks"></a> Special thanks
-TBD [@vit-svoboda](https://github.com/vit-svoboda)
+[@vit-svoboda](https://github.com/vit-svoboda) for making it happen. He helped me a lot with JavaScript + he has done done an awesome Vue module for parsing Kentico Kontent’s Rich-text components.
 
 # <a name="license"></a> License
 Feel free to get inspired by the code snippets. All other content (written content and logotypes related to tota agentura) are copyrighted.
