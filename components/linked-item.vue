@@ -1,5 +1,5 @@
 <script>
-	import linkedItemFactory from './would-be-sdk/linked-item-factory';
+	import { linkedItemFactory } from 'vue-kontent-rich-text';
 
 	import FigureImage from './linked-items/figure-image';
 	import Pos from './linked-items/pos';
