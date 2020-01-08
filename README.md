@@ -80,8 +80,8 @@ There are couple of ways, how you can go about rendering the components, we’ll
 We have tried this approach at first, and it was fine; we were able to write all Rich-text components this way. What we didn’t like so much with this approach was that with JS SDK you have to write [resolvers as interpolated string](https://github.com/Kentico/kontent-delivery-sdk-js/blob/master/DOCS.md#globally). This way, content-heavy components got really messy and not very maintainable templates. And on top of that we weren’t using Vue’s native component approach (yeah, we wanted to marry Vue components with Kentico Kontent componets). So we rewrote resolvers into Vue components the following way.
 
 ### Rendering Kentico Kontent components as Vue components
-[@vit-svoboda](https://github.com/vit-svoboda) wrote a [vue-kontent-rich-text](https://github.com/vit-svoboda/vue-kontent-rich-text)—an NPM package to help you resolve/render Kontent’s rich-text components as Vue components.
-Once you [include the package](https://github.com/vit-svoboda/vue-kontent-rich-text) in your project, you can start writing Vue components for Rich-text components the easy way. Check out [the examples](components/linked-items/) for an inspiration. 
+[@vit-svoboda](https://github.com/vit-svoboda) wrote [vue-kontent-rich-text](https://github.com/vit-svoboda/vue-kontent-rich-text)—an NPM package to help you resolve/render Kontent’s rich-text components as Vue components.
+Once you include the package in your project, you can start writing Vue components for Rich-text components the easy way. Check out [the examples](components/linked-items/) for an inspiration. 
 
 
 ## <a name="custom-list"></a> Custom list of projects
