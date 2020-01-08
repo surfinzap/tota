@@ -59,15 +59,29 @@ Here are extra notes on what is happening inside the file (TBD make it inline co
 * using [pug templating](https://pugjs.org/api/getting-started.html) instead of HTML
 * fetching project detail asynchronously
 * loading project’s state via [Vue’s computed property](https://vuejs.org/v2/guide/computed.html#Computed-Properties)
-* head() cannot access computed project state in a template, so we're accessing the store directly to fill in project's meta data
+* head() cannot access computed project state in a template, so we’re accessing the store directly to fill in project’s meta data
 * project’s content is stored as a Rich-text with couple of nested components. We’ll cover the rendering of Rich-text in the following example.
 
 
 ## <a name="rich-text"></a> Rendering Rich-text components
 ### Content model
-In Kentico Kontent, you extend Rich-text editor functionality with custom inline [Components](https://docs.kontent.ai/tutorials/write-and-collaborate/structure-your-content/structuring-editorial-articles-with-components). With Components, you can achieve more rich content for visitors and still get nicely structured response from [Delivery API](https://docs.kontent.ai/reference/delivery-api). I have been using components a lot, if you take a look at [this project](https://tota.sk/projekt/cervenyj-bereh), there couple of Components within the Rich-text: Image with Caption, YouTube Video, Point-of-sale list, Publication Info. You can find a list of all components [here TBD](tbd.tbd).
+In Kentico Kontent, you can extend Rich-text editor functionality with custom inline [Components](https://docs.kontent.ai/tutorials/write-and-collaborate/structure-your-content/structuring-editorial-articles-with-components). 
+With Components, you’ll both create more appealing content for visitors and you’ll still get nicely structured response from [Delivery API](https://docs.kontent.ai/reference/delivery-api). 
 
-TBD
+I have been using components a lot. If you take a look at [this project](https://tota.sk/projekt/cervenyj-bereh), there couple of Components within the Rich-text: Image with Caption, YouTube Video, Point-of-sale list, Publication Info. (Here’s the [list of all used Rich-text components](components/linked-items/)).
+
+There are couple of ways, how you can go about rendering the components, we’ll cover the two ways, we have tried.
+
+### Resolving components with kentico-kontent-nuxt-module (and kontent-delivery-sdk-js)
+[kentico-kontent-nuxt-module](https://github.com/Domitnator/kentico-kontent-nuxt-module) is “wrapping” kontent-delivery-sdk-js and gives you tools to ease the work with JS SDK in Nuxt.js app. With this toolset, you need to:
+* Write a resolver for each Rich-text component (or linked item) and save it models/ folder in Nuxt.js project; [Example of resolver in Kontent Delivery JS SDK](https://github.com/Kentico/kontent-delivery-sdk-js/blob/master/DOCS.md#resolving-content-items-and-components-in-rich-text-elements)
+* Register a resolver with kentico-kontent-nuxt-module, as it is shown in [this example](https://github.com/Domitnator/kentico-kontent-nuxt-module#pluginskenticokontentnuxtmodulejs-1)
+
+We have tried this approach at first, and it was fine; we were able to write all Rich-text components this way. What we didn’t like so much with this approach was that with JS SDK you have to write [resolvers as interpolated string](https://github.com/Kentico/kontent-delivery-sdk-js/blob/master/DOCS.md#globally). This way, content-heavy components got really messy and not very maintainable templates. And on top of that we weren’t using Vue’s native component approach (yeah, we wanted to marry Vue components with Kentico Kontent componets). So we rewrote resolvers into Vue components the following way.
+
+### Rendering Kentico Kontent components as Vue components
+[@vit-svoboda](https://github.com/vit-svoboda) wrote a [vue-kontent-rich-text](https://github.com/vit-svoboda/vue-kontent-rich-text)—an NPM package to help you resolve/render Kontent’s rich-text components as Vue components.
+Once you [include the package](https://github.com/vit-svoboda/vue-kontent-rich-text) in your project, you can start writing Vue components for Rich-text components the easy way. Check out [the examples](components/linked-items/) for an inspiration. 
 
 
 ## <a name="custom-list"></a> Custom list of projects
@@ -120,7 +134,7 @@ I have decided to use the [cookieconsent NPM package](https://www.npmjs.com/pack
 Here’s [the documentation](https://nuxtjs.org/faq/window-document-undefined#window-or-document-undefined-) of how you can run client-side JS in SSR mode. Here’s how I have included the configuration in the [master template](layouts/default.vue).
 
 # <a name="special-thanks"></a> Special thanks
-[@vit-svoboda](https://github.com/vit-svoboda) for making it happen. He helped me a lot with JavaScript + he has done done an awesome Vue module for parsing Kentico Kontent’s Rich-text components.
+[@vit-svoboda](https://github.com/vit-svoboda) for making it happen. He helped me a lot with JavaScript + he has done done an awesome [Vue module for parsing Kentico Kontent’s Rich-text components](https://github.com/vit-svoboda/vue-kontent-rich-text).
 
 # <a name="license"></a> License
 Feel free to get inspired by the code snippets. All other content (written content and logotypes related to tota agentura) are copyrighted.
