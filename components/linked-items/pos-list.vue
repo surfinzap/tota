@@ -1,6 +1,8 @@
 <template lang="pug">
-	.cp--pos-list
-		rich-text(:content='item.resellers_list.value' :linkedItemComponent='linkedItemComponent')
+	div
+		h3 {{ item.title.value }}
+		.cp--pos-list
+			rich-text(:content='item.resellers_list.value' :linkedItemComponent='linkedItemComponent')
 </template>
 
 <script>
