@@ -55,7 +55,7 @@ All projects are stored as a structured content in [Kentico Kontent](https://kon
 ### Project detail template
 The template for project detail is located at [pages/projekt/_id.vue](pages/projekt/_id.vue). [Nuxt has a convention](https://nuxtjs.org/guide/routing#dynamic-routes) how to name/categorize page templates to generate routes in a desired way (in my case I was looking for routes tota.sk/projekt/{project-detail}. 
 
-Here are extra notes on what is happening inside the file (TBD make it inline comments after merging):
+Here are extra notes on what is happening inside the file:
 * using [pug templating](https://pugjs.org/api/getting-started.html) instead of HTML
 * fetching project detail asynchronously
 * loading project’s state via [Vue’s computed property](https://vuejs.org/v2/guide/computed.html#Computed-Properties)
@@ -81,8 +81,15 @@ We have tried this approach at first, and it was fine; we were able to write all
 
 ### Rendering Kentico Kontent components as Vue components
 [@vit-svoboda](https://github.com/vit-svoboda) wrote [vue-kontent-rich-text](https://github.com/vit-svoboda/vue-kontent-rich-text)—an NPM package to help you resolve/render Kontent’s rich-text components as Vue components.
-Once you include the package in your project, you can start writing Vue components for Rich-text components the easy way. Check out [the examples](components/linked-items/) for an inspiration. 
-
+Let me walk you through how to render components. I’ll use “Project” content type as an example as it includes a lot of components:
+* set rich_text_components in [project store](store/project.js)
+* write a Rich text component that you want to be rendered (take an inspiration from the [list of Rich-text components in this project](components/rich-text))
+* write a Vue component that will keep the list of all your Rich text components to be rendered. Here's mine—[rich-text-component.vue](components/rich-text-component.vue).
+* use it all in [Project Vue template](pages/projekt/_id.vue):
+	* import { RichText } from 'vue-kontent-rich-text' and use it in a `<template>` section
+	* in `<script>` section take look at componets, richTextComponent, provide ()
+	 
+	 
 
 ## <a name="custom-list"></a> Custom list of projects
 There is a [list of projects](https://tota.sk/) at homepage. These projects don’t have any automatic ordering (e.g. sort by date desc), but they’re custom-ordered based on agency’s preferences.
