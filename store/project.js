@@ -65,7 +65,7 @@ export const actions = {
 							meta__image: response.items[0].meta__image.value[0].url,
 							meta__image__description: response.items[0].meta__image.value[0].description,
 							color: response.items[0].color.value,
-							linked_items: response.linkedItems,
+							rich_text_components: response.linkedItems,
 						}));
 					})
 					.catch(err => console.log('error:' + err));

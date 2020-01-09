@@ -4,12 +4,12 @@
 			.article
 				h1 {{ article.title }}
 				.article__content
-					rich-text(:content='article.content' :linkedItemComponent='linkedItemComponent')
+					rich-text(:content='article.content' :linkedItemComponent='richTextComponent')
 </template>
 
 <script>
 	import { RichText } from 'vue-kontent-rich-text';
-	import LinkedItem from "../components/linked-item";
+	import RichTextComponent from "../components/rich-text-component";
 
 	export default {
 		scrollToTop: true,
@@ -29,13 +29,13 @@
 			article () {
 				return this.$store.state.article.article;
 			},
-			linkedItemComponent() {
-				return LinkedItem;
+			richTextComponent() {
+				return RichTextComponent;
 			}
 		},
 		provide () {
 			return {
-				getLinkedItems: () => this.$store.state.article.article.linked_items,
+				getRichTextComponents: () => this.$store.state.article.article.rich_text_components,
 			};
 		},
 		head () {
