@@ -5,14 +5,14 @@
 		.container
 			.grid
 				.project__content
-					rich-text(:content='project.content' :linkedItemComponent='linkedItemComponent')
+					rich-text(:content='project.content' :linkedItemComponent='richTextComponent')
 </template>
 
 
 <script>
 import TranslitApp from '~/components/translit-app.vue'
 import { RichText } from 'vue-kontent-rich-text';
-import LinkedItem from '../components/linked-item';
+import RichTextComponent from '../components/rich-text-component';
 
 export default {
 	scrollToTop: true,
@@ -33,13 +33,13 @@ export default {
 		project () {
 			return this.$store.state.project.project;
 		},
-		linkedItemComponent() {
-			return LinkedItem;
+		richTextComponent() {
+			return RichTextComponent;
 		}
 	},
 	provide () {
 		return {
-			getLinkedItems: () => this.$store.state.project.project.linked_items,
+			getRichTextComponents: () => this.$store.state.project.project.rich_text_components,
 		}
 	},
 	head () {
