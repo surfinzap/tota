@@ -143,11 +143,6 @@ $cp--pos-item--padding:				0 ($grid-unit * 2);
 	}
 }
 
-
-
-
-
-
 .cp--bi-poem {
 	display: grid;
 	grid-template-columns: 100%;
@@ -161,4 +156,8 @@ $cp--pos-item--padding:				0 ($grid-unit * 2);
 	@media (min-width: $screen-sm-min) {
 		grid-template-columns: 1fr 1fr;
 	}
+}
+
+.cp--bi-poem__title {
+	margin-top: $vertical-rhythm--300;
 }
