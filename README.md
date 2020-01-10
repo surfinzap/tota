@@ -87,7 +87,7 @@ Let me walk you through how to render components. I’ll use “Project” conte
 * write a Vue component that will keep the list of all your Rich text components to be rendered. Here's mine—[rich-text-component.vue](components/rich-text-component.vue).
 * use it all in [Project Vue template](pages/projekt/_id.vue):
 	* import { RichText } from 'vue-kontent-rich-text' and use it in a `<template>` section
-	* in `<script>` section take look at componets, richTextComponent, provide ()
+	* in `<script>` section take a look at: componets, richTextComponent, provide ()
 	 
 	 
 
