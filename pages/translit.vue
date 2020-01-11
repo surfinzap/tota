@@ -4,18 +4,22 @@
 			translit-app
 		.container
 			.grid
-				.project__content(v-html='project.content')
+				.project__content
+					rich-text(:content='project.content' :linkedItemComponent='richTextComponent')
 </template>
 
 
 <script>
 import TranslitApp from '~/components/translit-app.vue'
+import { RichText } from 'vue-kontent-rich-text';
+import RichTextComponent from '../components/rich-text-component';
 
 export default {
 	scrollToTop: true,
 
 	components: {
-		TranslitApp
+		TranslitApp,
+		RichText
 	},
 
 	async fetch ({store, params, route}) {
@@ -25,13 +29,19 @@ export default {
 		});
 		await store.dispatch('homepage/getHomepage');
 	},
-
 	computed: {
 		project () {
 			return this.$store.state.project.project;
 		},
+		richTextComponent() {
+			return RichTextComponent;
+		}
 	},
-	
+	provide () {
+		return {
+			getRichTextComponents: () => this.$store.state.project.project.rich_text_components,
+		}
+	},
 	head () {
 		return {
 			title: this.$store.state.project.project.title + ' — ' + this.$store.state.homepage.homepage.title,

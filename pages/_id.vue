@@ -3,10 +3,14 @@
 		.grid
 			.article
 				h1 {{ article.title }}
-				div.article__content(v-html='article.content')
+				.article__content
+					rich-text(:content='article.content' :linkedItemComponent='richTextComponent')
 </template>
 
 <script>
+	import { RichText } from 'vue-kontent-rich-text';
+	import RichTextComponent from "../components/rich-text-component";
+
 	export default {
 		scrollToTop: true,
 
@@ -17,7 +21,7 @@
 			});
 			await store.dispatch('homepage/getHomepage');
 		},
-
+		components: { RichText },
 		computed: {
 			canonicalUrl () {
 				return this.$route.params.id
@@ -25,6 +29,14 @@
 			article () {
 				return this.$store.state.article.article;
 			},
+			richTextComponent() {
+				return RichTextComponent;
+			}
+		},
+		provide () {
+			return {
+				getRichTextComponents: () => this.$store.state.article.article.rich_text_components,
+			};
 		},
 		head () {
 			return {

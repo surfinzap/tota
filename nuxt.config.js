@@ -37,7 +37,6 @@ module.exports = {
 	** Plugins to load before mounting the App
 	*/
 	plugins: [
-		"~/plugins/kenticoKontentNuxtModule"
 	],
 	/*
 	** Nuxt.js dev-modules
@@ -106,6 +105,14 @@ module.exports = {
 		** You can extend webpack config here
 		*/
 		extend (config, ctx) {
+			if (ctx.isClient) {
+				config.node = {
+					fs: 'empty',
+					child_process: 'empty',
+					tls: 'empty',
+					net: 'empty',
+				}
+			}
 		}
 	}
 }

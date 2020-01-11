@@ -11,12 +11,17 @@
 							p.project__header-description {{ project.short_description }}
 		.container
 			.grid
-				.project__content(v-html='project.content')
+				.project__content
+					rich-text(:content='project.content', :linkedItemComponent='richTextComponent')
 </template>
 
 <script>
+	import { RichText } from 'vue-kontent-rich-text';
+	import RichTextComponent from '../../components/rich-text-component';
+
 	export default {
 		scrollToTop: true,
+		components: {RichText},
 
 		async fetch ({store, params, route}) {
 			await store.dispatch({
@@ -30,6 +35,14 @@
 			project () {
 				return this.$store.state.project.project;
 			},
+			richTextComponent() {
+				return RichTextComponent;
+			}
+		},
+		provide () {
+			return {
+				getRichTextComponents: () => this.$store.state.project.project.rich_text_components,
+			}
 		},
 		head () {
 			return {

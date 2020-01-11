@@ -27,7 +27,7 @@ export const actions = {
 						state.commit('setProjects', response.items[0].project_list.value.map(item => ({
 							title: item.title.value,
 							short_description: item.short_description.value,
-							content: item.content.resolveHtml(),
+							content: item.content.value,
 							image: new ImageUrlBuilder(item.image.value[0].url)
 								.withQuality(80)
 								.withWidth(768)
@@ -56,7 +56,7 @@ export const actions = {
 						state.commit('setProject', ({
 							title: response.items[0].title.value,
 							short_description: response.items[0].short_description.value,
-							content: response.items[0].content.resolveHtml(),
+							content: response.items[0].content.value,
 							image: response.items[0].image.value[0].url,
 							image_description: response.items[0].image.value[0].description,
 							meta__canonical_url: response.items[0].meta__canonical_url.value,
@@ -65,6 +65,7 @@ export const actions = {
 							meta__image: response.items[0].meta__image.value[0].url,
 							meta__image__description: response.items[0].meta__image.value[0].description,
 							color: response.items[0].color.value,
+							rich_text_components: response.linkedItems,
 						}));
 					})
 					.catch(err => console.log('error:' + err));
