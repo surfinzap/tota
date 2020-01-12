@@ -53,6 +53,7 @@ module.exports = {
 		'kentico-kontent-nuxt-module',
 		'@nuxtjs/sitemap',
 		'@nuxtjs/style-resources',
+		'@nuxtjs/redirect-module',
 	],
 	generate: {
 		routes () {
@@ -97,6 +98,9 @@ module.exports = {
 			lastmodrealtime: true
 		}
 	},
+	redirect: [
+		{ from: '^/prehlasenie-o-ochrane-sukromia', to: '/informacie-o-pouzivani-cookies', statusCode: 301 }
+	],
 	/*
 	** Build configuration
 	*/
