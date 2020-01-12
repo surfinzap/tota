@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "tota.sk web app",
   "author": "Brano Sandala",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "cross-env NODE_ENV=development NUXT_ENV_DEVALUE_LOG_LEVEL=silent nodemon server/index.js --watch server",
     "build": "nuxt build",
