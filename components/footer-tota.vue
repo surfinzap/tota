@@ -26,7 +26,7 @@
 							li
 								nuxt-link(to='/profil-verejneho-obstaravatela') profil verejného obstarávateľa
 							li
-								nuxt-link(to='/prehlasenie-o-ochrane-sukromia') prehlásenie o ochrane súkromia (cookies)
+								nuxt-link(to='/informacie-o-pouzivani-cookies') informácie o používaní cookies
 							li
 								nuxt-link(to='/podmienky-pouzivania') podmienky používania
 						p#copyrightNotice {{ copyrightNotice }}
