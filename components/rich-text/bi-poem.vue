@@ -11,7 +11,7 @@
 </template>
 
 <script>
-	import { RichText } from 'vue-kontent-rich-text'
+	import { RichText } from 'kontent-rich-text-for-vue'
 
 	export default {
 		props: ['item'],
