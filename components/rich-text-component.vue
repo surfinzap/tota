@@ -1,5 +1,5 @@
 <script>
-	import { linkedItemFactory } from 'vue-kontent-rich-text';
+	import { linkedItemFactory } from 'kontent-rich-text-for-vue';
 
 	import FigureImage from './rich-text/figure-image';
 	import Pos from './rich-text/pos';
