@@ -80,13 +80,13 @@ There are couple of ways, how you can go about rendering the components, we’ll
 We have tried this approach at first, and it was fine; we were able to write all Rich-text components this way. What we didn’t like so much with this approach was that with JS SDK you have to write [resolvers as interpolated string](https://github.com/Kentico/kontent-delivery-sdk-js/blob/master/DOCS.md#globally). This way, content-heavy components got really messy and not very maintainable templates. And on top of that we weren’t using Vue’s native component approach (yeah, we wanted to marry Vue components with Kentico Kontent componets). So we rewrote resolvers into Vue components the following way.
 
 ### Rendering Kentico Kontent components as Vue components
-[@vit-svoboda](https://github.com/vit-svoboda) wrote [vue-kontent-rich-text](https://github.com/vit-svoboda/vue-kontent-rich-text)—an NPM package to help you resolve/render Kontent’s rich-text components as Vue components.
+[@vit-svoboda](https://github.com/vit-svoboda) wrote [kontent-rich-text-for-vue](https://github.com/vit-svoboda/kontent-rich-text-for-vue)—an NPM package to help you resolve/render Kontent’s rich-text components as Vue components.
 Let me walk you through how to render components. I’ll use “Project” content type as an example as it includes a lot of components:
 * set rich_text_components in [project store](store/project.js)
 * write a Rich text component that you want to be rendered (take an inspiration from the [list of Rich-text components in this project](components/rich-text))
 * write a Vue component that will keep the list of all your Rich text components to be rendered. Here's mine—[rich-text-component.vue](components/rich-text-component.vue).
 * use it all in [Project Vue template](pages/projekt/_id.vue):
-	* import { RichText } from 'vue-kontent-rich-text' and use it in a `<template>` section
+	* import { RichText } from 'kontent-rich-text-for-vue' and use it in a `<template>` section
 	* in `<script>` section take a look at: componets, richTextComponent, provide ()
 	 
 	 
@@ -141,7 +141,7 @@ I have decided to use the [cookieconsent NPM package](https://www.npmjs.com/pack
 Here’s [the documentation](https://nuxtjs.org/faq/window-document-undefined#window-or-document-undefined-) of how you can run client-side JS in SSR mode. Here’s how I have included the configuration in the [master template](layouts/default.vue).
 
 # <a name="special-thanks"></a> Special thanks
-[@vit-svoboda](https://github.com/vit-svoboda) for making it happen. He helped me a lot with JavaScript + he has done done an awesome [Vue module for parsing Kentico Kontent’s Rich-text components](https://github.com/vit-svoboda/vue-kontent-rich-text).
+[@vit-svoboda](https://github.com/vit-svoboda) for making it happen. He helped me a lot with JavaScript + he has done done an awesome [Vue module for parsing Kentico Kontent’s Rich-text components](https://github.com/vit-svoboda/kontent-rich-text-for-vue).
 
 # <a name="license"></a> License
 Feel free to get inspired by the code snippets. All other content (written content and logotypes related to tota agentura) are copyrighted.

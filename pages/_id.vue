@@ -8,7 +8,7 @@
 </template>
 
 <script>
-	import { RichText } from 'vue-kontent-rich-text';
+	import { RichText } from 'kontent-rich-text-for-vue';
 	import RichTextComponent from "../components/rich-text-component";
 
 	export default {
