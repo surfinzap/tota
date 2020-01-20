@@ -1,17 +1,17 @@
 <template lang="pug">
-	div(itemscope='', itemtype='http://schema.org/Book')
+	div(itemscope='', itemtype='https://schema.org/Book')
 		h2 Informácie o publikácii
 		dl.cl--dl
 			dt Názov
 			dd(itemprop='name') {{item.title.value}}
 			dt Autor
-			dd(itemprop='author', itemtype='http://schema.org/Person', itemscope='')
+			dd(itemprop='author', itemtype='https://schema.org/Person', itemscope='')
 				span(itemprop='name') {{item.author.value}}
 			dt Ilustrácie
-			dd(itemprop='illustrator', itemtype='http://schema.org/Person', itemscope='')
+			dd(itemprop='illustrator', itemtype='https://schema.org/Person', itemscope='')
 				span(itemprop='name') {{item.illustrator.value}}
 			dt Jazyková úprava
-			dd(itemprop='editor', itemtype='http://schema.org/Person', itemscope='')
+			dd(itemprop='editor', itemtype='https://schema.org/Person', itemscope='')
 				span(itemprop='name') {{item.language_editor.value}}
 			dt Jazyk
 			dd
@@ -25,13 +25,13 @@
 				meta(itemprop='datePublished', :content='formatDate(item.date_published.value)')
 				| {{item.date_published.value.getFullYear()}}
 			dt Vydavateľ
-			dd(itemprop='publisher', itemtype='http://schema.org/Organization', itemscope='')
+			dd(itemprop='publisher', itemtype='https://schema.org/Organization', itemscope='')
 				span(itemprop='name') {{item.publisher.value}}
 			dt Vydanie
 			dd(itemprop='bookEdition') {{item.book_edition.value}}
 			dt Väzba
 			dd
-				link(itemprop='bookFormat', href='http://schema.org/Hardcover')
+				link(itemprop='bookFormat', href='https://schema.org/Hardcover')
 				| {{item.book_format.value}}
 			dt Rozmer
 			dd {{item.dimensions.value}}
@@ -46,7 +46,7 @@
 			dt Tlač
 			dd {{item.printer.value}}
 			dt Finančná podpora
-			dd(itemprop='sponsor', itemtype='http://schema.org/Organization', itemscope='')
+			dd(itemprop='sponsor', itemtype='https://schema.org/Organization', itemscope='')
 				span(itemprop='name') {{item.financial_aid.value}}
 </template>
 
