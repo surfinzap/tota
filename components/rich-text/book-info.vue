@@ -1,45 +1,65 @@
 <template lang="pug">
-	div
+	div(itemscope='', itemtype='http://schema.org/Book')
 		h2 Informácie o publikácii
 		dl.cl--dl
 			dt Názov
-			dd {{item.title.value}}
+			dd(itemprop='name') {{item.title.value}}
 			dt Autor
-			dd {{item.author.value}}
+			dd(itemprop='author', itemtype='http://schema.org/Person', itemscope='')
+				span(itemprop='name') {{item.author.value}}
 			dt Ilustrácie
-			dd {{item.illustrator.value}}
+			dd(itemprop='illustrator', itemtype='http://schema.org/Person', itemscope='')
+				span(itemprop='name') {{item.illustrator.value}}
 			dt Jazyková úprava
-			dd {{item.language_editor.value}}
+			dd(itemprop='editor', itemtype='http://schema.org/Person', itemscope='')
+				span(itemprop='name') {{item.language_editor.value}}
 			dt Jazyk
-			dd {{item.language.value}}
+			dd
+				meta(itemprop='inLanguage', content='rue')
+				| {{item.language.value}}
 			dt ISBN
-			dd {{item.isbn.value}}
+			dd(itemprop='isbn') {{item.isbn.value}}
 			dt Rok vydania
-			dd {{item.date_published.value.getFullYear()}}
+			dd
+				meta(itemprop='copyrightYear', :content='item.date_published.value.getFullYear()')
+				meta(itemprop='datePublished', :content='formatDate(item.date_published.value)')
+				| {{item.date_published.value.getFullYear()}}
 			dt Vydavateľ
-			dd {{item.publisher.value}}
+			dd(itemprop='publisher', itemtype='http://schema.org/Organization', itemscope='')
+				span(itemprop='name') {{item.publisher.value}}
 			dt Vydanie
-			dd {{item.book_edition.value}}
+			dd(itemprop='bookEdition') {{item.book_edition.value}}
 			dt Väzba
-			dd {{item.book_format.value}}
+			dd
+				link(itemprop='bookFormat', href='http://schema.org/Hardcover')
+				| {{item.book_format.value}}
 			dt Rozmer
 			dd {{item.dimensions.value}}
 			dt Hmotnosť
 			dd {{item.weight.value}}
 			dt Počet strán
-			dd {{item.number_of_pages.value}}
+			dd(itemprop='numberOfPages') {{item.number_of_pages.value}}
 			dt Písmo
 			dd {{item.typeface.value}}
 			dt Papier
-			dd {{item.paper.value}}
+			dd(itemprop='material') {{item.paper.value}}
 			dt Tlač
 			dd {{item.printer.value}}
 			dt Finančná podpora
-			dd {{item.financial_aid.value}}
+			dd(itemprop='sponsor', itemtype='http://schema.org/Organization', itemscope='')
+				span(itemprop='name') {{item.financial_aid.value}}
 </template>
 
 <script>
+	const moment = require('moment');
 	export default {
-		props: ['item']
+		props: ['item'],
+		methods: {
+			formatDate(value) {
+				const dateLocale = 'sk';
+				const dateFormat = 'YYYY-MM-DD'; // 2019-01-20
+				return moment(value).locale(dateLocale).format(dateFormat)
+			}
+		}
 	}
 </script>
