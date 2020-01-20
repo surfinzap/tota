@@ -25,6 +25,9 @@ $cp--pos-item--padding:				0 ($grid-unit * 2);
 .cp--youtube-video,
 .cp--image {
 	box-sizing: content-box;
+	display: flex;
+	flex-direction: column;
+	background-color: $cp--bg-color;
 	border: $cp--border-width solid $cp--bg-color;
 	@extend %cp--offset;
 }

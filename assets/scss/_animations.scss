@@ -1,0 +1,67 @@
+%keyframes--appear {
+	cursor: default;
+
+	@keyframes appear {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+}
+
+
+%keyframes--rotate {
+	cursor: default;
+
+	@keyframes rotate {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+}
+
+
+%keyframes--pulse {
+	cursor: default;
+
+	@keyframes pulse {
+		0% {
+			opacity: 0;
+		}
+		30% {
+			opacity: 1;
+		}
+		70% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+}
+
+
+
+img[lazy=loading] {
+	animation: 2s pulse infinite, 1s rotate infinite;
+
+	width: 70px;
+	height: 70px;
+	margin: $grid-unit * 4;
+	align-self: center;
+
+	@extend %keyframes--pulse;
+	@extend %keyframes--rotate;
+}
+
+img[lazy=error] {
+	width: 70px;
+	height: 70px;
+	margin: $grid-unit * 4;
+	align-self: center;
+}
