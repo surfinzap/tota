@@ -16,6 +16,7 @@ I wanted to make this repo public to share few examples of how I used:
 	* [Generating static site and sitemap](#static-site)
 	* [Adding Cookie Consent](#cookie-consent)
 	* [Schema.org metadata](#schema-metadata)
+	* [Lazy-loading images](#lazyloading)
 * [Special thanks](#special-thanks)
 * [License](#license)
 
@@ -141,9 +142,16 @@ I have decided to use the [cookieconsent NPM package](https://www.npmjs.com/pack
 
 Here’s [the documentation](https://nuxtjs.org/faq/window-document-undefined#window-or-document-undefined-) of how you can run client-side JS in SSR mode. Here’s how I have included the configuration in the [master template](layouts/default.vue).
 
+
 ## <a name="schema-metadata"></a> Schema.org metadata
 * For [Book](https://schema.org/Book) metadata check out [book-info.vue](components/rich-text/book-info.vue) Vue component.
 * Here’s the Google’s [Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool) to check you’ve applied schema properly ([example—one of the books](https://search.google.com/structured-data/testing-tool#url=https%3A%2F%2Ftota.sk%2Fprojekt%2Fany-by-ste-ne-viryly))
+
+
+## <a name="lazyloading"></a> Lazy-loading images
+* Used [vue-lazyload](https://github.com/hilongjw/vue-lazyload) plugin
+* With the help of [this tutorial](https://www.yasminzy.com/nuxt/vue-lazyload.html#steps)
+* My implementation in [this commit](https://github.com/surfinzap/tota/commit/7f50f9ed2eb6f02d6eb34796a0967e78a9590c76)
 
 # <a name="special-thanks"></a> Special thanks
 [@vit-svoboda](https://github.com/vit-svoboda) for making it happen. He helped me a lot with JavaScript + he has done done an awesome [Vue module for parsing Kentico Kontent’s Rich-text components](https://github.com/vit-svoboda/kontent-rich-text-for-vue).
