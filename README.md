@@ -15,6 +15,7 @@ I wanted to make this repo public to share few examples of how I used:
 	* [Combining Single-page application (SPA) and server-side rendered content](#spa)
 	* [Generating static site and sitemap](#static-site)
 	* [Adding Cookie Consent](#cookie-consent)
+	* [Schema.org metadata](#schema-metadata)
 * [Special thanks](#special-thanks)
 * [License](#license)
 
@@ -139,6 +140,10 @@ By the way, the module is [rather robust](https://github.com/nuxt-community/site
 I have decided to use the [cookieconsent NPM package](https://www.npmjs.com/package/cookieconsent). It seemed to have a lot [configuration options](https://www.osano.com/cookieconsent/documentation/javascript-api/). However, the JavaScript configuration has to be executed at client side (I have talked about Server vs. Client server rendering [elsewhere](#spa)).
 
 Here’s [the documentation](https://nuxtjs.org/faq/window-document-undefined#window-or-document-undefined-) of how you can run client-side JS in SSR mode. Here’s how I have included the configuration in the [master template](layouts/default.vue).
+
+## <a name="schema-metadata"></a> Schema.org metadata
+* For [Book](https://schema.org/Book) metadata check out [book-info.vue](components/rich-text/book-info.vue) Vue component.
+* Here’s the Google’s [Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool) to check you’ve applied schema properly [(example—one of the books)](https://search.google.com/structured-data/testing-tool#url=https%3A%2F%2Ftota.sk%2Fprojekt%2Fany-by-ste-ne-viryly)
 
 # <a name="special-thanks"></a> Special thanks
 [@vit-svoboda](https://github.com/vit-svoboda) for making it happen. He helped me a lot with JavaScript + he has done done an awesome [Vue module for parsing Kentico Kontent’s Rich-text components](https://github.com/vit-svoboda/kontent-rich-text-for-vue).
