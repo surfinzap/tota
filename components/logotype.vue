@@ -20,14 +20,7 @@
 				width: ($grid-unit * 11);
 			}
 
-			@keyframes appear {
-				0% {
-					opacity: 0;
-				}
-				100% {
-					opacity: 1;
-				}
-			}
+			@extend %keyframes--appear;
 		}
 
 		&--footer {

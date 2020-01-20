@@ -7,13 +7,13 @@
 					.project-tile__credentials(:style='"background-color:" + project.color + ";"')
 						h2.project-tile__title {{ project.title }}
 						p.project-tile__description {{ project.short_description }}
-					img.project-tile__thumbnail(:src='project.image' :alt='project.image_description')
+					img.project-tile__thumbnail(v-lazy='project.image' :alt='project.image_description')
 
 				nuxt-link.project-tile__link(v-else :to='"projekt/" + project.meta__canonical_url')
 					.project-tile__credentials(:style='"background-color:" + project.color + ";"')
 						h2.project-tile__title {{ project.title }}
 						p.project-tile__description {{ project.short_description }}
-					img.project-tile__thumbnail(:src='project.image' :alt='project.image_description')
+					img.project-tile__thumbnail(v-lazy='project.image' :alt='project.image_description')
 </template>
 
 
