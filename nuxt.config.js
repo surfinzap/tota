@@ -1,5 +1,5 @@
 const axios = require('axios')
-
+const webpack = require('webpack')
 
 module.exports = {
 	loading: false,
@@ -118,6 +118,12 @@ module.exports = {
 					net: 'empty',
 				}
 			}
-		}
+		},
+		plugins: [
+			new webpack.ContextReplacementPlugin(
+				/moment[\/\\]locale$/,
+				/en|sk/
+			)
+		]
 	}
 }
