@@ -18,7 +18,7 @@
     "cross-env": "^6.0.3",
     "express": "^4.17.1",
     "kentico-kontent-nuxt-module": "^3.4.0",
-    "kontent-rich-text-for-vue": "^0.1.1",
+    "kontent-rich-text-for-vue": "^1.0.0",
     "moment": "^2.24.0",
     "nuxt": "^2.11.0",
     "rxjs": "^6.5.4",
