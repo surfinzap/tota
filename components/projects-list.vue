@@ -2,18 +2,17 @@
 	.container.container--project-list
 		ul.project-list
 			li.project-tile(v-for='project in projects' v-bind:key='project.meta__canonical_url')
-
-				nuxt-link.project-tile__link(v-if='project.is_translit' :to='project.meta__canonical_url')
+				nuxt-link.project-tile__link(:to='project.is_translit ? project.meta__canonical_url : "projekt/" + project.meta__canonical_url')
 					.project-tile__credentials(:style='"background-color:" + project.color + ";"')
 						h2.project-tile__title {{ project.title }}
 						p.project-tile__description {{ project.short_description }}
-					img.project-tile__thumbnail(v-lazy='project.image' :alt='project.image_description')
+					<!-- img.project-tile__thumbnail(v-lazy='project.image' :alt='project.image_description') -->
 
-				nuxt-link.project-tile__link(v-else :to='"projekt/" + project.meta__canonical_url')
-					.project-tile__credentials(:style='"background-color:" + project.color + ";"')
-						h2.project-tile__title {{ project.title }}
-						p.project-tile__description {{ project.short_description }}
-					img.project-tile__thumbnail(v-lazy='project.image' :alt='project.image_description')
+						picture(v-lazy-container="{ selector: 'source' }")
+							source(media='(max-width: 560px)', :srcset='project.image')
+							source(media='(max-width: 768px)', :srcset='project.image__sm')
+							source(media='(max-width: 944px)', :srcset='project.image__md')
+							img(:src='project.image', :alt='project.image_description', style='width: auto')
 </template>
 
 

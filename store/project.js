@@ -29,8 +29,18 @@ export const actions = {
 							short_description: item.short_description.value,
 							content: item.content.value,
 							image: new ImageUrlBuilder(item.image.value[0].url)
+								.withQuality(85)
+								.withWidth(560)
+								.withFitMode(ImageFitModeEnum.Scale)
+								.getUrl(),
+							image__sm: new ImageUrlBuilder(item.image.value[0].url)
 								.withQuality(80)
 								.withWidth(768)
+								.withFitMode(ImageFitModeEnum.Scale)
+								.getUrl(),
+							image__md: new ImageUrlBuilder(item.image.value[0].url)
+								.withQuality(85)
+								.withWidth(480)
 								.withFitMode(ImageFitModeEnum.Scale)
 								.getUrl(),
 							image_description: item.image.value[0].description,
