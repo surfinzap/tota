@@ -4,6 +4,11 @@
 		.content-wrapper
 			nuxt
 			footer-tota
+		<!-- let's try postpone loading fonts -->
+		link(
+			rel='stylesheet',
+			href='https://fonts.googleapis.com/css?family=Alegreya:500,500i,700,800i,900i&display=swap&subset=cyrillic-ext,latin-ext'
+		)
 </template>
 
 
@@ -44,9 +49,6 @@ export default {
 		FooterTota,
 	},
 	head: {
-		link: [
-			{ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Alegreya:500,500i,700,800i,900i&display=swap&subset=cyrillic-ext,latin-ext' }
-		],
 		meta: [
 			{ name: 'google-site-verification', content: 'fx0sZBSOYt6hdMsZvKNXTVQ0YDt21sMVEGe2xMwBmF0' },
 		]
