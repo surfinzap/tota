@@ -5,6 +5,11 @@ module.exports = {
 	loading: false,
 	mode: 'universal',
 	components: true,
+	/*
+	** Nuxt target
+	** See https://nuxtjs.org/api/configuration-target
+	*/
+	target: 'static',
 
 	/*
 	** Headers of the page
