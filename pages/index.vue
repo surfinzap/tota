@@ -6,16 +6,8 @@
 
 
 <script>
-import Tagline from '~/components/tagline.vue'
-import ProjectsList from '~/components/projects-list.vue'
-
 export default {
 	scrollToTop: false,
-
-	components: {
-		Tagline,
-		ProjectsList
-	},
 
 	async fetch ({store, params}) {
 		await store.dispatch('homepage/getHomepage');

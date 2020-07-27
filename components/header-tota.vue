@@ -6,12 +6,7 @@
 
 
 <script>
-import Logotype from '~/components/logotype.vue';
-
 export default {
-	components: {
-		Logotype,
-	}
 }
 </script>
 

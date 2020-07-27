@@ -35,12 +35,7 @@
 
 
 <script>
-import Logotype from '~/components/logotype.vue';
-
 export default {
-	components: {
-		Logotype,
-	},
 	computed: {
 		copyrightNotice () {
 			var currentYear = new Date().getFullYear().toString().substring(2, 4);
@@ -48,9 +43,6 @@ export default {
 		}
 	},
 }
-
-
-
 </script>
 
 
