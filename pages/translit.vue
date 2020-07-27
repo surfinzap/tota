@@ -10,7 +10,6 @@
 
 
 <script>
-import TranslitApp from '~/components/translit-app.vue'
 import { RichText } from 'kontent-rich-text-for-vue';
 import RichTextComponent from '../components/rich-text-component';
 
@@ -18,7 +17,6 @@ export default {
 	scrollToTop: true,
 
 	components: {
-		TranslitApp,
 		RichText
 	},
 
