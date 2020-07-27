@@ -1,13 +1,18 @@
-const axios = require('axios')
-const webpack = require('webpack')
+const axios = require('axios');
+const webpack = require('webpack');
 
 module.exports = {
 	loading: false,
 	mode: 'universal',
+	components: true,
+
 	/*
 	** Headers of the page
 	*/
 	head: {
+		htmlAttrs: {
+			lang: 'sk',
+		},
 		title: process.env.npm_package_name || '',
 		meta: [
 			{ charset: 'utf-8' },
