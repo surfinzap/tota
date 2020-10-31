@@ -11,6 +11,11 @@
 
 <style lang='scss'>
 	.logotype {
+
+    &:hover {
+      cursor: pointer;
+    }
+
 		&--header {
 			animation: 2s appear;
 			fill: $red;

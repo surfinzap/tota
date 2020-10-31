@@ -50,7 +50,7 @@
 	.project-tile {
 		&:active,
 		&:focus {
-			box-shadow: 0px 0px 3px 2px rgba(210,85,46,1);
+      border: 2px solid $gray--30;
 		}
 		&:hover {
 			.project-tile__credentials {
