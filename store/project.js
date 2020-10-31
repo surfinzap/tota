@@ -1,6 +1,4 @@
-import { SortOrder,
-				 ImageUrlBuilder,
-				 ImageCompressionEnum,
+import { ImageUrlBuilder,
 				 ImageFitModeEnum} from '@kentico/kontent-delivery'
 
 export const state = () => ({
@@ -62,7 +60,11 @@ export const actions = {
 							meta__canonical_url: response.items[0].meta__canonical_url.value,
 							meta__description: response.items[0].meta__description.value,
 							meta__keywords: response.items[0].meta__keywords.value,
-							meta__image: response.items[0].meta__image.value[0].url,
+              meta__image: new ImageUrlBuilder(response.items[0].meta__image.value[0].url)
+                .withQuality(85)
+                .withWidth(1200)
+                .withFitMode(ImageFitModeEnum.Scale)
+                .getUrl(),
 							meta__image__description: response.items[0].meta__image.value[0].description,
 							color: response.items[0].color.value,
 							rich_text_components: response.linkedItems,
