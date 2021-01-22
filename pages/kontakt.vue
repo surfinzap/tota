@@ -23,9 +23,9 @@
 					dd občianske združenie
 					dt Adresa
 					dd
-						| Gen. Svobodu 698/21
+						| Nižná Jedľová 109
 						br
-						|  089 01 Svidník
+						|  089 01 Nižná Jedľová
 						br
 						|  Slovenská republika
 					dt IČO
