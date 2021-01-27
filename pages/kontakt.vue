@@ -25,7 +25,7 @@
 					dd
 						| Nižná Jedľová 109
 						br
-						|  089 01 Nižná Jedľová
+						|  089 01 Svidník
 						br
 						|  Slovenská republika
 					dt IČO
