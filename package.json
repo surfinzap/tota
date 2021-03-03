@@ -34,7 +34,9 @@
     "nodemon": "^2.0.7",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
-    "@comment sass-laoder" :"the latest version that nuxtjs is compatible with",
     "sass-loader": "^10.1.1" 
+  },
+  "comments" : {
+    "sass-loader" : "the latest version that nuxtjs is compatible with"
   }
 }
