@@ -13,17 +13,17 @@
     "generate": "nuxt build && nuxt export"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/axios": "^5.13.1",
     "@nuxtjs/redirect-module": "^0.3.1",
     "@nuxtjs/sitemap": "^2.4.0",
     "cookieconsent": "^3.1.1",
-    "cross-env": "^7.0.2",
+    "cross-env": "^7.0.3",
     "express": "^4.17.1",
-    "kentico-kontent-nuxt-module": "^6.0.0",
+    "kentico-kontent-nuxt-module": "^6.2.0",
     "kontent-rich-text-for-vue": "^1.0.0",
     "moment": "^2.29.1",
-    "nuxt": "^2.14.7",
-    "rxjs": "^6.6.3",
+    "nuxt": "^2.15.2",
+    "rxjs": "^6.6.6",
     "translit-rue": "^2.0.1",
     "vue-lazyload": "^1.3.3"
   },
@@ -31,9 +31,9 @@
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "node-sass": "^4.14.1",
-    "nodemon": "^2.0.6",
-    "pug": "^3.0.0",
-    "pug-plain-loader": "^1.0.0",
+    "nodemon": "^2.0.7",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
     "sass-loader": "^10.0.4"
   }
 }
