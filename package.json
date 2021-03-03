@@ -32,7 +32,7 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.6",
-    "pug": "^3.0.0",
+    "pug": "^3.0.1",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^10.0.4"
   }
