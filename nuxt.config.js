@@ -3,7 +3,6 @@ const webpack = require('webpack');
 
 module.exports = {
 	loading: false,
-	mode: 'universal',
 	components: true,
 	/*
 	** Nuxt target
