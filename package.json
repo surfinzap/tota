@@ -22,14 +22,14 @@
     "kentico-kontent-nuxt-module": "^6.4.0",
     "kontent-rich-text-for-vue": "^1.0.0",
     "moment": "^2.29.1",
-    "nuxt": "^2.15.6",
+    "nuxt": "^2.15.8",
     "rxjs": "^7.3.0",
     "translit-rue": "^2.0.5",
     "vue-lazyload": "^1.3.3"
   },
   "devDependencies": {
     "@nuxtjs/google-analytics": "^2.4.0",
-    "@nuxtjs/style-resources": "^1.1.0",
+    "@nuxtjs/style-resources": "^1.2.1",
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.12",
     "pug": "^3.0.2",
