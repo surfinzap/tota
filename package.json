@@ -10,7 +10,7 @@
     "start": "nuxt start",
     "export": "nuxt export",
     "serve": "nuxt serve",
-    "generate": "nuxt build && nuxt export"
+    "generate": "nuxt build && nuxt generate"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
