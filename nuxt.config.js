@@ -88,10 +88,12 @@ module.exports = {
 	},
 	kenticokontent: {
 		projectId: 'bb4c6333-f362-0041-9d56-f18f18e36725',
-		enableAdvancedLogging: true,
+		enableAdvancedLogging: false,
 		previewApiKey: '',
-		enablePreviewMode: false,
-		enableSecuredMode: false
+		globalQueryConfig: {
+			usePreviewMode: false, 
+      useSecureMode: false,
+		},
 	},
 	styleResources: {
 		scss: [
