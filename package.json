@@ -38,6 +38,7 @@
   },
   "comments": {
     "sass-loader": "^10.1.1 is the latest version that nuxtjs is compatible with",
-    "node-sass": "^5.0.0. is the latest version that nuxtjs is compatible with"
+    "node-sass": "^5.0.0. is the latest version that nuxtjs is compatible with",
+    "kentico-kontent-nuxt-module": "breaking changes in 8.0.0 ($nuxtDeliveryClient) and may be some typescript rewrites (7.0.0)"
   }
 }
