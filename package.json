@@ -21,7 +21,7 @@
     "express": "^4.17.2",
     "kentico-kontent-nuxt-module": "^6.5.0",
     "kontent-rich-text-for-vue": "^2.0.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "nuxt": "^2.15.8",
     "rxjs": "^7.5.2",
     "translit-rue": "^2.0.5",
