@@ -18,20 +18,20 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "cookieconsent": "^3.1.1",
     "cross-env": "^7.0.3",
-    "express": "^4.17.2",
+    "express": "^4.18.1",
     "kentico-kontent-nuxt-module": "^6.5.0",
     "kontent-rich-text-for-vue": "^2.0.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "nuxt": "^2.15.8",
-    "rxjs": "^7.5.2",
-    "translit-rue": "^2.0.5",
-    "vue-lazyload": "^1.3.3"
+    "rxjs": "^7.5.6",
+    "translit-rue": "^2.0.7",
+    "vue-lazyload": "^1.3.4"
   },
   "devDependencies": {
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/style-resources": "^1.2.1",
     "node-sass": "^5.0.0",
-    "nodemon": "^2.0.15",
+    "nodemon": "^2.0.19",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
     "sass-loader": "^10.1.1"
