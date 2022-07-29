@@ -6,8 +6,8 @@
 					h1 translit
 				.translit-app__actions
 					.translit-app__actions-label transliteruj
-					button.btn.btn--cta.translit-app__action(v-on:click='actionLatCyr') do azbuky
-					button.btn.btn--cta.translit-app__action(v-on:click='actionCyrLat') do latinky
+					button.btn.btn--cta.translit-app__action.translit-app__action--cyr(v-on:click='actionLatCyr') do azbuky
+					button.btn.btn--cta.translit-app__action.translit-app__action--lat(v-on:click='actionCyrLat') do latinky
 			textarea.translit-app__textarea(placeholder='Vlož text k transliterácii' autofocus v-model='translit_text') {{ translit_text }}
 </template>
 
@@ -66,6 +66,19 @@ export default {
 	}
 	
 	.translit-app__action {
+		&:before {
+			opacity: 0.7;
+			margin-right: ($grid-unit * 3);
+		}
+
+		&--cyr:before {
+			content: "Д";
+		}
+
+		&--lat:before {
+			content: "D";
+		}
+		
 		& + & {
 			margin-left: $grid-unit * 2;
 		}
