@@ -87,6 +87,7 @@ export default {
 	.translit-app__textarea {
 		color: $gray--80;
 		width: 100%;
+		min-width: 100%;
 		max-width: 100%;
 		min-height: 45vh;
 		padding: $grid-unit * 2;
