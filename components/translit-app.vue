@@ -32,8 +32,6 @@ export default {
 				eventAction: 'toCyrillic',
 				eventLabel: this.translit_text.length,
 			})
-
-			console.log('test');
 		},
 		actionCyrLat: function () {
 			this.translit_text = translitCyrLat(this.translit_text);
