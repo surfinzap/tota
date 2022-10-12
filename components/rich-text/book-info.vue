@@ -13,6 +13,9 @@
 			dt Jazyková úprava
 			dd(itemprop='editor', itemtype='https://schema.org/Person', itemscope='')
 				span(itemprop='name') {{item.language_editor.value}}
+			dt(v-if='item.technical_editor.value!=""') Technický redaktor
+			dd(v-if='item.technical_editor.value!=""')
+				span {{item.technical_editor.value}}
 			dt Jazyk
 			dd
 				meta(itemprop='inLanguage', content='rue')
