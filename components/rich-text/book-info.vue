@@ -16,6 +16,12 @@
 			dt(v-if='item.technical_editor.value!=""') Technický redaktor
 			dd(v-if='item.technical_editor.value!=""')
 				span {{item.technical_editor.value}}
+			dt(v-if='item.typesetter.value!=""') Sadzba a typografia
+			dd(v-if='item.typesetter.value!=""')
+				span {{item.typesetter.value}}
+			dt(v-if='item.art_director.value!=""') Umelecké smerovanie
+			dd(v-if='item.art_director.value!=""')
+				span {{item.art_director.value}}
 			dt Jazyk
 			dd
 				meta(itemprop='inLanguage', content='rue')
