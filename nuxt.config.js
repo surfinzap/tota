@@ -46,7 +46,9 @@ module.exports = {
 	** Plugins to load before mounting the App
 	*/
 	plugins: [
-		'~/plugins/vue-lazyload',
+    { src: '~/plugins/vue-lazyload', mode: 'client' },
+    { src: '~/plugins/deleteCookies.js', mode: 'client' },
+
 	],
 	/*
 	** Nuxt.js modules
@@ -56,13 +58,7 @@ module.exports = {
 		'@nuxtjs/sitemap',
 		'@nuxtjs/style-resources',
 		'@nuxtjs/redirect-module',
-		'@nuxtjs/gtm',
 	],
-	gtm: {
-		id: 'GTM-PX2V7M',      
-		enabled: true,
-		pageTracking: true,
-	},
 	generate: {
 		routes () {
 			let articles = axios.get('https://deliver.kontent.ai/bb4c6333-f362-0041-9d56-f18f18e36725/items?system.type=article&elements=meta__canonical_url')

@@ -27,21 +27,21 @@ export default {
 			this.translit_text = translitLatCyr(this.translit_text);
 
 			// Push event to Google Tag Manager
-			this.$gtm.push({
-				event: 'translit',
-				eventAction: 'toCyrillic',
-				eventLabel: this.translit_text.length,
-			})
+			// this.$gtm.push({
+			// 	event: 'translit',
+			// 	eventAction: 'toCyrillic',
+			// 	eventLabel: this.translit_text.length,
+			// })
 		},
 		actionCyrLat: function () {
 			this.translit_text = translitCyrLat(this.translit_text);
 
 			// Push event to Google Tag Manager
-			this.$gtm.push({
-				event: 'translit',
-				eventAction: 'toLatin',
-				eventLabel: this.translit_text.length,
-			})
+			// this.$gtm.push({
+			// 	event: 'translit',
+			// 	eventAction: 'toLatin',
+			// 	eventLabel: this.translit_text.length,
+			// })
 		}
 	}
 }
