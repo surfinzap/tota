@@ -23,25 +23,30 @@ export default {
 	},
 
 	methods: {
-		actionLatCyr: function () {
+		actionLatCyr () {
 			this.translit_text = translitLatCyr(this.translit_text);
 
-			// Push event to Google Tag Manager
-			// this.$gtm.push({
-			// 	event: 'translit',
-			// 	eventAction: 'toCyrillic',
-			// 	eventLabel: this.translit_text.length,
-			// })
+			// Simple Analytics Events
+			sa_event('translit_cyrillic')
+			sa_event('translit_cyrillic_' + this.getBallparkTextLength() )
 		},
-		actionCyrLat: function () {
+		actionCyrLat () {
 			this.translit_text = translitCyrLat(this.translit_text);
 
-			// Push event to Google Tag Manager
-			// this.$gtm.push({
-			// 	event: 'translit',
-			// 	eventAction: 'toLatin',
-			// 	eventLabel: this.translit_text.length,
-			// })
+			// Simple Analytics Events
+			sa_event('translit_latin')
+			sa_event('translit_latin_' + this.getBallparkTextLength() )
+		},
+		getBallparkTextLength () {
+			let textLength = this.translit_text.length
+
+			switch(true) {
+				case textLength <= 50: return '50';
+				case textLength <= 100: return '100';
+				case textLength <= 500: return '500';
+				case textLength <= 1000: return '1000';
+				default: return '1000plus';
+			}
 		}
 	}
 }
