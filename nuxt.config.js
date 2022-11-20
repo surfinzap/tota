@@ -39,9 +39,7 @@ module.exports = {
 	/*
 	** Global CSS
 	*/
-	css: [
-		'cookieconsent/build/cookieconsent.min.css'
-	],
+	css: [],
 	/*
 	** Plugins to load before mounting the App
 	*/
