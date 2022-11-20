@@ -5,8 +5,9 @@
 
 */
 function deleteCookie(name) {
-  document.cookie = name + '=; Path=/; Domain=.app.typopo.org;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  document.cookie = name + '=; Path=/; Domain=.tota.sk;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 };
 
 deleteCookie('_gid')
 deleteCookie('_ga')
+deleteCookie('tota_cookieconsent')
