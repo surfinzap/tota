@@ -9,9 +9,9 @@
 				h2 Členovia
 				dl
 					dt Riaditeľ
-					dd Ing. Ľudmila Šandalová
-					dt Manažér
 					dd Mgr. Vladimír Šandala
+					dt Manažér
+					dd Ing. Ľudmila Šandalová
 					dt Dizajnér
 					dd Braňo Šandala
 
